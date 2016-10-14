@@ -1,0 +1,20 @@
+@charset "gb2312";
+body,ul,li,p,h2,h3,h4,ol,di{ margin:0; padding:0}
+img{ border:none;}
+ul{ list-style-type:none}
+a{ text-decoration:none}
+body{ background:url(../images/bg.jpg);}
+
+.clear{ clear:both;}
+.m10{ margin-top:10px;}
+.m5{ margin-top:5px;}
+.box{ width:960px; margin:0 auto;}
+
+.login{ width:530px; height:270px; margin:150px auto 0; background:url(../images/login.jpg); overflow:hidden; position:relative; z-index:0}
+.login h2{ height:80px; line-height:90px; padding-left:40px; color:#FFF; font-family:"ËÎÌå"; font-weight:800;}
+.login h2 a{ display:block; position:absolute; top:0; right:130px; color:#FFF; font-size:12px; font-weight:normal}
+.login form{ display:block; margin-top:5px; margin-left:42px; width:400px;}
+.login form a{ display:block; height:31px; line-height:31px; color:#FFF; font-size:14px; font-family:"Î¢ÈíÑÅºÚ"; float:left}
+.login .ipt{ display:block; width:161px; height:31px; padding-left:10px; line-height:31px; border:none; float:left; margin-right:30px; background:none; margin-bottom:15px;}
+.login .yzm{ background:url(../images/txt.png) no-repeat; margin-left:2px;}
+.login .button{ display:block; position:absolute; top:14px; right:13px; width:93px; height:240px; background:none; border:none;}
