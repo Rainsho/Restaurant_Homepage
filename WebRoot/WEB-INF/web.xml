@@ -90,6 +90,31 @@
     <servlet-name>FoodUpdateServlet</servlet-name>
     <servlet-class>com.restaurant.servlet.FoodUpdateServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UserLoadServlet</servlet-name>
+    <servlet-class>com.restaurant.servlet.UserLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserDeleteServlet</servlet-name>
+    <servlet-class>com.restaurant.servlet.UserDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserAddServlet</servlet-name>
+    <servlet-class>com.restaurant.servlet.UserAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <servlet-class>com.restaurant.servlet.UserUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ResLoadServlet</servlet-name>
+    <servlet-class>com.restaurant.servlet.ResLoadServlet</servlet-class>
+  </servlet>
+
+
+
+
+
 
 
 
@@ -185,6 +210,26 @@
   <servlet-mapping>
     <servlet-name>FoodUpdateServlet</servlet-name>
     <url-pattern>/FoodUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLoadServlet</servlet-name>
+    <url-pattern>/UserLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserDeleteServlet</servlet-name>
+    <url-pattern>/UserDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserAddServlet</servlet-name>
+    <url-pattern>/UserAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <url-pattern>/UserUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResLoadServlet</servlet-name>
+    <url-pattern>/ResLoadServlet</url-pattern>
   </servlet-mapping>
 
 	<!-- configure filter -->

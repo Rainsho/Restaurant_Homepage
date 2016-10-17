@@ -1,5 +1,6 @@
 package com.restaurant.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Reservation {
@@ -71,6 +72,24 @@ public class Reservation {
 
 	public Reservation() {
 		super();
+	}
+	
+	public String fmtDate() {
+		if (resdate == null) {
+			return null;
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return sdf.format(resdate.getTime());
+	}
+
+	public String fmtDate(String fmt) {
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat(fmt);
+			return sdf.format(resdate.getTime());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

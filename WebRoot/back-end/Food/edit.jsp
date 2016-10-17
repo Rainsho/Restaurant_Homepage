@@ -12,7 +12,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>新增菜品</title>
+<title>更新菜品</title>
 <link rel="stylesheet" type="text/css" href="back-end/Css/bootstrap.css" />
 <link rel="stylesheet" type="text/css"
 	href="back-end/Css/bootstrap-responsive.css" />

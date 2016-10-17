@@ -90,11 +90,11 @@
 					}, {
 						id : '24',
 						text : '员工管理',
-						href : 'back-end/Node/index.html'
+						href : 'UserLoadServlet'
 					}, {
 						id : '25',
 						text : '预订管理',
-						href : 'back-end/Node/index.html'
+						href : 'ResLoadServlet'
 					}, {
 						id : '26',
 						text : '画廊管理',
