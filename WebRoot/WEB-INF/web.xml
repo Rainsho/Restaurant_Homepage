@@ -110,6 +110,16 @@
     <servlet-name>ResLoadServlet</servlet-name>
     <servlet-class>com.restaurant.servlet.ResLoadServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>HomepageLoadServlet</servlet-name>
+    <servlet-class>com.restaurant.servlet.HomepageLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>HomepageUpdateServlet</servlet-name>
+    <servlet-class>com.restaurant.servlet.HomepageUpdateServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -230,6 +240,14 @@
   <servlet-mapping>
     <servlet-name>ResLoadServlet</servlet-name>
     <url-pattern>/ResLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HomepageLoadServlet</servlet-name>
+    <url-pattern>/HomepageLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HomepageUpdateServlet</servlet-name>
+    <url-pattern>/HomepageUpdateServlet</url-pattern>
   </servlet-mapping>
 
 	<!-- configure filter -->

@@ -78,7 +78,7 @@
 					items : [ {
 						id : '21',
 						text : '主页管理',
-						href : 'back-end/Node/index.html'
+						href : 'HomepageLoadServlet'
 					}, {
 						id : '22',
 						text : '菜单管理',
