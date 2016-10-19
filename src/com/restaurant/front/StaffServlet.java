@@ -1,11 +1,15 @@
 package com.restaurant.front;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.restaurant.dao.UserDAO;
+import com.restaurant.entity.User;
 
 public class StaffServlet extends HttpServlet {
 
@@ -20,6 +24,10 @@ public class StaffServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
+
+		UserDAO dao = new UserDAO();
+		ArrayList<User> list = dao.getStaff();
+		request.getSession().setAttribute("staff_list", list);
 
 		response.sendRedirect("front-end/staff.jsp");
 	}

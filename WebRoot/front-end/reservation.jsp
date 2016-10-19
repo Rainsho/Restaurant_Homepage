@@ -4,43 +4,47 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
 
-    <!-- Basic Page Needs
+<!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
+<meta charset="utf-8">
 <title>牛逼西餐官网</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	
-    <!-- Mobile Specific Metas
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <!-- CSS
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
   ================================================== -->
-  	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/slide.css">
-	<link rel="stylesheet" href="css/menu.css">
-	<!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 8]>
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/slide.css">
+<link rel="stylesheet" href="css/menu.css">
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
         </a>
       </div>
     <![endif]-->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
 		<script src="js/html5.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-    
+
 </head>
 <body>
-<div class="wrap-body">
+	<div class="wrap-body">
 		<!--///////////////////////////////////////Top-->
 		<div class="top">
 			<div class="zerogrid">
@@ -80,87 +84,105 @@
 				<li class="colour-2"><a href="../MenuServlet">菜单</a></li>
 				<li class="colour-4"><a href="../ArchiveServlet">动态</a></li>
 				<li class="colour-5"><a href="../StaffServlet">员工</a></li>
-				<li class="colour-7"><a href="../ReservationServletp">预订</a></li>
+				<li class="colour-7"><a href="../ReservationServlet">预订</a></li>
 				<li class="colour-8"><a href="../GalleryServlet">画廊</a></li>
 			</ul>
 		</nav>
-	
-<!--////////////////////////////////////Container-->
-<section id="container" class="sub-page">
-	<div class="wrap-container zerogrid">
-		<div class="crumbs">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="reservation.html">Reservation</a></li>
-			</ul>
-		</div>
-		<div id="main-content">
-			<div class="wrap-content">
-				<div class="row">
-					<div class="col-1-3">
-						<div class="wrap-col">
-							<h3>Complete the Submission Form</h3>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p><br/>
-							<h3>Or Just Make a Call</h3>
-							<p>+6221 888 888 90 <br>
-								+6221 888 88891</p>
-							<p>info@yourdomain.com</p>
-						</div>
-					</div>
-					<div class="col-2-3">
-						<div class="wrap-col">
-							<div class="contact">
-								<div id="contact_form">
-									<form name="contact" id="contact" method="post" action="reservation.php">
-										<label class="row">
-											<div class="col-1-2">
-												<div class="wrap-col">
-													<input type="text" name="name" id="name" placeholder="Enter name" required="required" />
+
+		<!--////////////////////////////////////Container-->
+		<section id="container" class="sub-page">
+			<div class="wrap-container zerogrid">
+				<div class="crumbs">
+					<ul>
+						<li><a href="../IndexServlet">主页</a></li>
+						<li><a href="../ReservationServlet">预订</a></li>
+					</ul>
+				</div>
+				<div id="main-content">
+					<div class="wrap-content">
+						<div class="row">
+							<div class="col-1-3">
+								<div class="wrap-col">
+									<h3>请填写右侧预订信息</h3>
+									<p>预订不收取任何费用。我们的工作人员会尽快与您核实具体就餐时间或其他需求。如需取消预订，请在预订时间前2小时电话告知。</p>
+									<br />
+									<h3>或直接致电</h3>
+									<p>
+										+86 27 5931 8888 <br> +86 27 5931 7777
+									</p>
+									<p>info@newbeerestaurant.com</p>
+								</div>
+							</div>
+							<div class="col-2-3">
+								<div class="wrap-col">
+									<div class="contact">
+										<div id="contact_form">
+											<form name="contact" id="contact" method="post"
+												onsubmit="return ajax_res();">
+												<div class="row">
+													<div class="col-1-3">
+														<div class="wrap-col">
+															<input type="text" name="uname" id="uname"
+																placeholder="您的姓名" required="required" />
+														</div>
+													</div>
+													<div class="col-1-3">
+														<div class="wrap-col">
+															<input type="text" name="utelphone" id="utelphone"
+																placeholder="您的电话" required="required" />
+														</div>
+													</div>
+													<div class="col-1-3">
+														<div class="wrap-col">
+															<input type="number" name="resseat" id="resseat"
+																placeholder="预订位数" required="required" min="1" max="100" />
+														</div>
+													</div>
 												</div>
-											</div>
-											<div class="col-1-2">
-												<div class="wrap-col">
-													<input type="email" name="email" id="email" placeholder="Enter email" required="required" />
+												<div class="row">
+													<div class="col-1-3">
+														<div class="wrap-col">
+															<input type="text" name="restitle" id="restitle"
+																placeholder="预订标题" required="required" />
+														</div>
+													</div>
+													<div class="col-1-3">
+														<div class="wrap-col">
+															<input type="date" name="date" id="date"
+																placeholder="Date" required="required" />
+														</div>
+													</div>
+													<div class="col-1-3">
+														<div class="wrap-col">
+															<input type="time" name="time" id="time"
+																placeholder="Time" required="required" />
+														</div>
+													</div>
 												</div>
-											</div>
-										</label>
-										<label class="row">
-											<div class="col-2-4">
-												<div class="wrap-col">
-												<input type="text" name="subject" id="subject" placeholder="Subject" required="required" />
+												<div class="row">
+													<div class="wrap-col">
+														<textarea name="resinfo" id="resinfo" class="form-control"
+															rows="4" cols="25" placeholder="预订信息（选填）"></textarea>
+													</div>
 												</div>
-											</div>
-											<div class="col-1-4">
-												<div class="wrap-col">
-												<input type="date"  name="date" id="date" placeholder="Date"/>
-												</div>
-											</div>
-											<div class="col-1-4">
-												<div class="wrap-col">
-												<input type="time"  name="time" id="time" placeholder="Time"/>
-												</div>
-											</div>											
-										</label>
-										<label class="row">
-											<div class="wrap-col">
-												<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
-												placeholder="Message"></textarea>
-											</div>
-										</label>
-										<center><input class="sendButton" type="submit" name="Submit" value="Submit"></center>
-									</form>
+												<center>
+													<input class="sendButton" type="submit" name="Submit"
+														value="预订">
+												</center>
+											</form>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div> 
-	</div>
-</section>
+		</section>
 
-<!--////////////////////////////////////Footer-->
-<footer class="zerogrid">
+
+		<!--////////////////////////////////////Footer-->
+		<footer class="zerogrid">
 			<div class="wrap-footer">
 				<div class="row">
 					<div class="col-1-3">
@@ -216,9 +238,63 @@
 		</footer>
 
 
-	<!-- js -->
-	<script src="js/classie.js"></script>
-	<script src="js/demo.js"></script>
-	
-</div>
-</body></html>
+		<!-- js -->
+		<script src="js/classie.js"></script>
+		<script src="js/demo.js"></script>
+
+	</div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 默认第二天19点
+		var d = new Date();
+		d.setDate(d.getDate() + 1);
+		var yy = d.getFullYear();
+		var mm = d.getMonth() < 9 ? ('0' + (d.getMonth() + 1))
+				: (d.getMonth() + 1);
+		var dd = d.getDate() < 10 ? ('0' + d.getDate()) : d.getDate();
+		$('#date').val(yy + '-' + mm + '-' + dd);
+		$('#time').val('19:00');
+	});
+
+	function ajax_res() {
+		var uname = $('#uname').val().trim();
+		var utelphone = $('#utelphone').val().trim();
+		// resseat 交给H5验证
+		var resseat = $('#resseat').val().trim();
+		var restitle = $('#restitle').val().trim();
+		var resinfo = $('#resinfo').val().trim();
+		var resdate = $('#date').val().trim() + ' ' + $('#time').val().trim();
+
+		// check utelphone/resdate
+		var t = resdate.split(/\D/);
+		var d = new Date(t[0], t[1] - 1, t[2], t[3] - 2, t[4]);
+		if (d < new Date()) {
+			alert('距您预订的时间已不足两小时，臣妾做不到啊！');
+			return false;
+		}
+		if (!utelphone.match(/^1[3578]\d{9}$/)) {
+			alert('暂时只支持中国大陆1开头11位手机号');
+			$('#utelphone').focus().select();
+			return false;
+		}
+
+		var data = {
+			uname : uname,
+			utelphone : utelphone,
+			resseat : resseat,
+			restitle : restitle,
+			resinfo : resinfo,
+			resdate : resdate
+		};
+
+		$.post('../ReservationServlet', data, function() {
+			alert('预订成功，稍后会有我们的客服人员为您确定。');
+			contact.reset();
+		});
+
+		return false;
+	}
+</script>
+</html>

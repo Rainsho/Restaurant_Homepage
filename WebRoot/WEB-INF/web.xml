@@ -135,13 +135,18 @@
 		<servlet-class>com.restaurant.front.StaffServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>ReservationServletp</servlet-name>
-		<servlet-class>com.restaurant.front.ReservationServletp</servlet-class>
+		<servlet-name>ReservationServlet</servlet-name>
+		<servlet-class>com.restaurant.front.ReservationServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>GalleryServlet</servlet-name>
 		<servlet-class>com.restaurant.front.GalleryServlet</servlet-class>
 	</servlet>
+  <servlet>
+    <servlet-name>ArchiveMoreServlet</servlet-name>
+    <servlet-class>com.restaurant.front.ArchiveMoreServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -296,13 +301,17 @@
 		<url-pattern>/StaffServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>ReservationServletp</servlet-name>
-		<url-pattern>/ReservationServletp</url-pattern>
+		<servlet-name>ReservationServlet</servlet-name>
+		<url-pattern>/ReservationServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>GalleryServlet</servlet-name>
 		<url-pattern>/GalleryServlet</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ArchiveMoreServlet</servlet-name>
+    <url-pattern>/ArchiveMoreServlet</url-pattern>
+  </servlet-mapping>
 
 	<!-- configure filter -->
 	<filter>

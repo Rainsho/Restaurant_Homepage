@@ -36,6 +36,10 @@ body {
 		padding-right: 5px;
 	}
 }
+
+input,textarea {
+	width: 50%;
+}
 </style>
 
 </head>
@@ -44,16 +48,16 @@ body {
 	<form action="AddNewsServlet" method="post">
 		<table class="table table-bordered table-hover definewidth m10">
 			<tr>
+				<td class="tableleft">主题</td>
+				<td><input type="text" name="ntag" /></td>
+			</tr>
+			<tr>
 				<td width="10%" class="tableleft">作者</td>
 				<td><input type="text" name="nauthor" /></td>
 			</tr>
 			<tr>
 				<td class="tableleft">正文</td>
 				<td><textarea name="ncontent" rows=10 />请输入正文</textarea></td>
-			</tr>
-			<tr>
-				<td class="tableleft">标签</td>
-				<td><input type="text" name="ntag" /></td>
 			</tr>
 			<tr>
 				<td class="tableleft"></td>

@@ -41,6 +41,12 @@ body {
 		padding-right: 5px;
 	}
 }
+
+.ncontent_exp {
+	height: 20px;
+	overflow: hidden;
+	width: 600px;
+}
 </style>
 
 </head>
@@ -56,18 +62,18 @@ body {
 	</form>
 	<table class="table table-bordered table-hover definewidth m10">
 		<tr>
-			<th>编号</th>
+			<th>主题</th>
 			<th>作者</th>
 			<th>发表时间</th>
-			<th width="60%">正文</th>
+			<th width="50%">正文</th>
 			<th>管理操作</th>
 		</tr>
 		<c:forEach var="news" items="${sessionScope.news_list }">
 			<tr>
-				<td>${news.nid }</td>
+				<td>${news.ntag }</td>
 				<td>${news.nauthor }</td>
 				<td>${news.fmtDate() }</td>
-				<td class="ncontent">${news.ncontent }</td>
+				<td><div class="ncontent ncontent_exp">${news.ncontent }</div></td>
 				<td><a href="EditNewsServlet?nid=${news.nid }">编辑</a>&nbsp;|&nbsp;<a
 					href="javascript:del(${news.nid });">删除</a></td>
 			</tr>
@@ -163,9 +169,15 @@ body {
 			}
 		};
 
-		//markdown support
-		$('.ncontent').each(function() {
-			$(this).html(marked($(this).text()));
+		$(function() {
+			//markdown support
+			$('.ncontent').each(function() {
+				$(this).html(marked($(this).text()));
+			});
+			// click event
+			$('.ncontent').parent().click(function() {
+				$(this).children('div').toggleClass("ncontent_exp");
+			});
 		});
 	</script>
 </body>

@@ -1,16 +1,21 @@
 package com.restaurant.front;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONObject;
+
 import com.restaurant.dao.NewsDAO;
+import com.restaurant.entity.BackMsg;
 import com.restaurant.entity.News;
 
-public class ArchiveServlet extends HttpServlet {
+public class ArchiveMoreServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -23,24 +28,21 @@ public class ArchiveServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
 
+		int page = Integer.parseInt(request.getParameter("page"));
 		NewsDAO dao = new NewsDAO();
-		News news = null;
-
-		try {
-			int nid = Integer.parseInt(request.getParameter("nid"));
-			news = dao.getById(nid);
-			if (news == null) {
-				news = dao.getNewOne();
-			}
-		} catch (Exception e) {
-			news = dao.getNewOne();
+		ArrayList<News> list = dao.getPage(page);
+		BackMsg msg = new BackMsg(200, "ok", list);
+		if (list.size() < 10) {
+			msg.setState(list.size());
+			msg.setMsg("no more");
 		}
 
-		request.getSession().setAttribute("archive_news", news);
-		request.getRequestDispatcher("front-end/archive.jsp").forward(request,
-				response);
+		JSONObject jsonobj = JSONObject.fromObject(msg);
+		out.print(jsonobj.toString());
 
+		out.close();
 	}
 
 }

@@ -1,46 +1,61 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
 
-    <!-- Basic Page Needs
+<!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
+<meta charset="utf-8">
 <title>牛逼西餐官网</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	
-    <!-- Mobile Specific Metas
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <!-- CSS
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
   ================================================== -->
-  	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/slide.css">
-	<link rel="stylesheet" href="css/menu.css">
-	<!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 8]>
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/slide.css">
+<link rel="stylesheet" href="css/menu.css">
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
         </a>
       </div>
     <![endif]-->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
 		<script src="js/html5.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-    
+
+<style type="text/css">
+.chef p {
+	text-align: left;
+	font-size: 12px;
+	text-indent: 24px;
+	padding: 0 6px;
+	margin: 0;
+}
+</style>
+
 </head>
 <body>
-<div class="wrap-body">
+	<div class="wrap-body">
 		<!--///////////////////////////////////////Top-->
 		<div class="top">
 			<div class="zerogrid">
@@ -80,97 +95,50 @@
 				<li class="colour-2"><a href="../MenuServlet">菜单</a></li>
 				<li class="colour-4"><a href="../ArchiveServlet">动态</a></li>
 				<li class="colour-5"><a href="../StaffServlet">员工</a></li>
-				<li class="colour-7"><a href="../ReservationServletp">预订</a></li>
+				<li class="colour-7"><a href="../ReservationServlet">预订</a></li>
 				<li class="colour-8"><a href="../GalleryServlet">画廊</a></li>
 			</ul>
 		</nav>
-	
-<!--////////////////////////////////////Container-->
-<section id="container" class="sub-page">
-	<div class="wrap-container zerogrid">
-		<div class="crumbs">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="staff.html">Staff</a></li>
-			</ul>
-		</div>
-		<div id="main-content">
-			<div class="wrap-content">
-				<div class="chef">
-					<div class="row">
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="zoom-container">
-									<a href="#">
-										<img src="images/chef-1.jpg" />
-									</a>
-								</div>
-								<h3>Chef's Name</h3>
-								<ul class="social t-center">
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="zoom-container">
-									<a href="#">
-										<img src="images/chef-2.jpg" />
-									</a>
-								</div>
-								<h3>Chef's Name</h3>
-								<ul class="social t-center">
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="zoom-container">
-									<a href="#">
-										<img src="images/chef-3.jpg" />
-									</a>
-								</div>
-								<h3>Chef's Name</h3>
-								<ul class="social t-center">
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="zoom-container">
-									<a href="#">
-										<img src="images/chef-4.jpg" />
-									</a>
-								</div>
-								<h3>Chef's Name</h3>
-								<ul class="social t-center">
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
+
+		<!--////////////////////////////////////Container-->
+		<section id="container" class="sub-page">
+			<div class="wrap-container zerogrid">
+				<div class="crumbs">
+					<ul>
+						<li><a href="../IndexServlet">主页</a></li>
+						<li><a href="../StaffServlet">员工</a></li>
+					</ul>
+				</div>
+				<div id="main-content">
+					<div class="wrap-content">
+						<div class="chef">
+							<c:forEach var="sf" items="${sessionScope.staff_list }"
+								varStatus="status">
+								<c:if test="${status.index % 4 == 0 }">
+									<div class="row">
+										<c:forEach var="sf" items="${sessionScope.staff_list }"
+											begin="${status.index }" end="${status.index + 3 }">
+											<div class="col-1-4">
+												<div class="wrap-col">
+													<div class="zoom-container">
+														<a><img src="${sf.upic }" /></a>
+													</div>
+													<h3>${sf.uname }</h3>
+													<p>${sf.ustaffinfo }</p>
+												</div>
+											</div>
+										</c:forEach>
+									</div>
+								</c:if>
+							</c:forEach>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div> 
-	</div>
-</section>
+		</section>
 
-<!--////////////////////////////////////Footer-->
-<footer class="zerogrid">
+		<!--////////////////////////////////////Footer-->
+		<footer class="zerogrid">
 			<div class="wrap-footer">
 				<div class="row">
 					<div class="col-1-3">
@@ -226,9 +194,10 @@
 		</footer>
 
 
-	<!-- js -->
-	<script src="js/classie.js"></script>
-	<script src="js/demo.js"></script>
-	
-</div>
-</body></html>
+		<!-- js -->
+		<script src="js/classie.js"></script>
+		<script src="js/demo.js"></script>
+
+	</div>
+</body>
+</html>

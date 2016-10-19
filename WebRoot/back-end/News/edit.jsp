@@ -36,6 +36,10 @@ body {
 		padding-right: 5px;
 	}
 }
+
+input,textarea {
+	width: 50%;
+}
 </style>
 
 </head>
@@ -43,6 +47,11 @@ body {
 <body>
 	<form action="EditNewsServlet2" method="post">
 		<table class="table table-bordered table-hover definewidth m10">
+			<tr>
+				<td class="tableleft">主题</td>
+				<td><input type="text" name="ntag"
+					value="${sessionScope.news.ntag }" /></td>
+			</tr>
 			<tr>
 				<td width="10%" class="tableleft">作者</td>
 				<td><input type="text" name="nauthor"
@@ -56,11 +65,6 @@ body {
 			<tr>
 				<td class="tableleft">正文</td>
 				<td><textarea name="ncontent" rows=10 />${sessionScope.news.ncontent }</textarea></td>
-			</tr>
-			<tr>
-				<td class="tableleft">标签</td>
-				<td><input type="text" name="ntag"
-					value="${sessionScope.news.ntag }" /></td>
 			</tr>
 			<tr>
 				<td class="tableleft"></td>

@@ -82,4 +82,24 @@ public class ReservationDAO extends BaseDAO {
 		return -1;
 	}
 
+	public void addRes(Reservation res) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		try {
+			con = getCon();
+			String sql = "insert into reservation (uid, restitle, resdate, resinfo, resseat) values (?, ?, ?, ?, ?)";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, res.getUser().getUid());
+			pst.setString(2, res.getRestitle());
+			pst.setString(3, res.fmtDate());
+			pst.setString(4, res.getResinfo());
+			pst.setInt(5, res.getResseat());
+			pst.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, null);
+		}
+	}
+
 }

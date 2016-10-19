@@ -242,4 +242,53 @@ public class UserDAO extends BaseDAO {
 		}
 	}
 
+	public ArrayList<User> getStaff() {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select * from [user] where utype = 2 and ustaffdisplay = 1";
+			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
+			ArrayList<User> list = new ArrayList<User>();
+			while (rs.next()) {
+				User obj = new User(rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getString(4), rs.getInt(5),
+						rs.getString(6), rs.getInt(7), rs.getString(8));
+				list.add(obj);
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+
+	public User getResUser(String uname, String utelphone) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select * from [user] where utype = 3 and uname = ? and utelphone = ?";
+			pst = con.prepareStatement(sql);
+			pst.setString(1, uname);
+			pst.setString(2, utelphone);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				return new User(rs.getInt(1), rs.getString(2), rs.getString(3),
+						rs.getString(4), rs.getInt(5), rs.getString(6),
+						rs.getInt(7), rs.getString(8));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+
 }

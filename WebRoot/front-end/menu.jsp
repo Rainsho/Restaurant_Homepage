@@ -85,7 +85,7 @@
 				<li class="colour-2"><a href="../MenuServlet">菜单</a></li>
 				<li class="colour-4"><a href="../ArchiveServlet">动态</a></li>
 				<li class="colour-5"><a href="../StaffServlet">员工</a></li>
-				<li class="colour-7"><a href="../ReservationServletp">预订</a></li>
+				<li class="colour-7"><a href="../ReservationServlet">预订</a></li>
 				<li class="colour-8"><a href="../GalleryServlet">画廊</a></li>
 			</ul>
 		</nav>
@@ -106,7 +106,7 @@
 							<c:if test="${status.index % 3 ==0 }">
 								<div class="row">
 									<c:forEach var="ft" items="${sessionScope.menu_list1 }"
-										begin="${status.index }" end="${status.index+2 }">
+										begin="${status.index }" end="${status.index + 2 }">
 										<div class="col-1-3">
 											<div class="wrap-col">
 												<h3>${ft.ftname }</h3>

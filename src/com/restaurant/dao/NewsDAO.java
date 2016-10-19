@@ -17,7 +17,7 @@ public class NewsDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from news";
+			String sql = "select * from news order by ndate desc";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 			ArrayList<News> list = new ArrayList<News>();
@@ -104,9 +104,83 @@ public class NewsDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from news where nauthor like ?";
+			String sql = "select * from news where nauthor like ?  order by ndate desc";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, "%" + nauthor + "%");
+			rs = pst.executeQuery();
+			ArrayList<News> list = new ArrayList<News>();
+			while (rs.next()) {
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(rs.getTimestamp(3));
+				News obj = new News(rs.getInt(1), rs.getString(2), cal,
+						rs.getString(4), rs.getString(5));
+				list.add(obj);
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+
+	public News getNewOne() {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select * from news order by ndate desc";
+			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(rs.getTimestamp(3));
+				return new News(rs.getInt(1), rs.getString(2), cal,
+						rs.getString(4), rs.getString(5));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+
+	public News getById(int nid) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select * from news where nid = ?";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, nid);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(rs.getTimestamp(3));
+				return new News(rs.getInt(1), rs.getString(2), cal,
+						rs.getString(4), rs.getString(5));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+
+	public ArrayList<News> getPage(int page) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select top 10 * from news where nid not in (select top (10*?-10) nid from news order by ndate desc) order by ndate desc";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, page);
 			rs = pst.executeQuery();
 			ArrayList<News> list = new ArrayList<News>();
 			while (rs.next()) {
