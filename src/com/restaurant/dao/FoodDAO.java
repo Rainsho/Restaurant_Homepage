@@ -148,5 +148,33 @@ public class FoodDAO extends BaseDAO {
 			closeCon(con, pst, null);
 		}
 	}
+	
+	public ArrayList<Food> getAll() {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select a.*, b.*, c.* from food as a, foodtype as b, picture as c "
+					+ "where a.ftid = b.ftid and a.pid = c.pid";
+			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
+			ArrayList<Food> list = new ArrayList<Food>();
+			while (rs.next()) {
+				FoodType foodtype = new FoodType(rs.getInt(7), rs.getString(8));
+				Picture picture = new Picture(rs.getInt(9), rs.getString(10),
+						rs.getString(11), rs.getInt(12));
+				Food food = new Food(rs.getInt(1), foodtype, picture,
+						rs.getString(4), rs.getString(5), rs.getFloat(6));
+				list.add(food);
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
 
 }

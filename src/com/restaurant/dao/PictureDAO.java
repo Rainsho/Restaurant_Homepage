@@ -15,7 +15,7 @@ public class PictureDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from picture";
+			String sql = "select * from picture order by pdisplay desc";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 			ArrayList<Picture> list = new ArrayList<Picture>();
@@ -126,6 +126,30 @@ public class PictureDAO extends BaseDAO {
 				return new Picture(rs.getInt(1), rs.getString(2),
 						rs.getString(3), rs.getInt(4));
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+	
+	public ArrayList<Picture> getShow() {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select * from picture where pdisplay = 1";
+			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
+			ArrayList<Picture> list = new ArrayList<Picture>();
+			while (rs.next()) {
+				Picture obj = new Picture(rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getInt(4));
+				list.add(obj);
+			}
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

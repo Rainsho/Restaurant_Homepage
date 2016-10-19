@@ -1,313 +1,201 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
 
-    <!-- Basic Page Needs
+<!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
-	<title>ChinaZ</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	
-    <!-- Mobile Specific Metas
+<meta charset="utf-8">
+<title>牛逼西餐官网</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <!-- CSS
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
   ================================================== -->
-  	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/slide.css">
-	<link rel="stylesheet" href="css/menu.css">
-	<!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 8]>
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/slide.css">
+<link rel="stylesheet" href="css/menu.css">
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
         </a>
       </div>
     <![endif]-->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
 		<script src="js/html5.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-    
+
 </head>
 <body>
-<div class="wrap-body">
-	<!--///////////////////////////////////////Top-->
-	<div class="top">
-		<div class="zerogrid">
-			<ul class="number f-left">
-				<li class="mail"><p>ContacUst@Gmail.com</p></li>
-				<li class="phone"><p>08 88888 88888</p></li>
-			</ul>
-			<ul class="top-social f-right">
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			</ul>
-		</div>
-	</div>
-	<!--////////////////////////////////////Header-->
-	<!--////////////////////////////////////Header-->
-	<header>
-		<div class="zerogrid">
-			<center><div class="logo"><img src="images/logo.png"></div></center>
-		</div>
-	</header>
-	<div class="site-title">
-		<div class="zerogrid">
-			<div class="row">
-				<h2 class="t-center">我们这里最牛逼的西餐厅 - 纽约时报</h2>
+	<div class="wrap-body">
+		<!--///////////////////////////////////////Top-->
+		<div class="top">
+			<div class="zerogrid">
+				<ul class="number f-left">
+					<li class="mail"><p>rainsho@126.com</p></li>
+					<li class="phone"><p>134 3719 0052</p></li>
+				</ul>
+				<ul class=" f-right">
+					<li><p>
+							<a href="../back-end/login.jsp" style="color:white;">登录后台管理</a>
+						</p></li>
+				</ul>
 			</div>
 		</div>
-	</div>
-    <!--//////////////////////////////////////Menu-->
-    <a href="#" class="nav-toggle">Toggle Navigation</a>
-    <nav class="cmn-tile-nav">
-		<ul class="clearfix">
-			<li class="colour-1"><a href="index.jsp">Home</a></li>
-			<li class="colour-2"><a href="menu.jsp">Menu</a></li>
-			<li class="colour-4"><a href="archive.jsp">Blog</a></li>
-			<li class="colour-5"><a href="staff.jsp">Our Staff</a></li>
-			<li class="colour-7"><a href="reservation.jsp">Reservation</a></li>
-			<li class="colour-8"><a href="gallery.jsp">Gallery</a></li>
-		</ul>
-    </nav>
-	
-<!--////////////////////////////////////Container-->
-<section id="container" class="sub-page">
-	<div class="wrap-container zerogrid">
-		<div class="crumbs">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="menu.html">Menu</a></li>
-			</ul>
+		<!--////////////////////////////////////Header-->
+		<header>
+			<div class="zerogrid">
+				<center>
+					<div class="logo">
+						<img src="images/logo.png">
+					</div>
+				</center>
+			</div>
+		</header>
+		<div class="site-title">
+			<div class="zerogrid">
+				<div class="row">
+					<h2 class="t-center">我们这里最牛逼的西餐厅 - 纽约时报</h2>
+				</div>
+			</div>
 		</div>
-		<div id="main-content">
-			<div class="wrap-content">
+		<!--//////////////////////////////////////Menu-->
+		<a href="#" class="nav-toggle">选择频道</a>
+		<nav class="cmn-tile-nav">
+			<ul class="clearfix">
+				<li class="colour-1"><a href="../IndexServlet">主页</a></li>
+				<li class="colour-2"><a href="../MenuServlet">菜单</a></li>
+				<li class="colour-4"><a href="../ArchiveServlet">动态</a></li>
+				<li class="colour-5"><a href="../StaffServlet">员工</a></li>
+				<li class="colour-7"><a href="../ReservationServletp">预订</a></li>
+				<li class="colour-8"><a href="../GalleryServlet">画廊</a></li>
+			</ul>
+		</nav>
+
+		<!--////////////////////////////////////Container-->
+		<section id="container" class="sub-page">
+			<div class="wrap-container zerogrid">
+				<div class="crumbs">
+					<ul>
+						<li><a href="../IndexServlet">主页</a></li>
+						<li><a href="../MenuServlet">菜单</a></li>
+					</ul>
+				</div>
+				<div id="main-content">
+					<div class="wrap-content">
+						<c:forEach var="ft0" items="${sessionScope.menu_list1 }"
+							varStatus="status">
+							<c:if test="${status.index % 3 ==0 }">
+								<div class="row">
+									<c:forEach var="ft" items="${sessionScope.menu_list1 }"
+										begin="${status.index }" end="${status.index+2 }">
+										<div class="col-1-3">
+											<div class="wrap-col">
+												<h3>${ft.ftname }</h3>
+												<c:forEach var="f" items="${sessionScope.menu_list2 }">
+													<c:if test="${ft.ftid == f.foodtype.ftid }">
+														<div class="post">
+															<a><img src="${f.picture.ppath }"
+																alt="${f.picture.ppath }" /></a>
+															<div class="wrapper">
+																<h5>
+																	<a>${f.fname }</a>
+																</h5>
+																<span>$&nbsp;${f.fprice } - ${f.fprice }</span>
+															</div>
+														</div>
+													</c:if>
+												</c:forEach>
+											</div>
+										</div>
+									</c:forEach>
+								</div>
+							</c:if>
+						</c:forEach>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--////////////////////////////////////Footer-->
+		<footer class="zerogrid">
+			<div class="wrap-footer">
 				<div class="row">
 					<div class="col-1-3">
 						<div class="wrap-col">
-							<h3>Pasta Plates</h3>
-							<div class="post">
-								<a href="#"><img src="images/15.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/10.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/9.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
+							<h4>客户反馈</h4>
+							<div class="row">
+								<img src="images/a-1.jpg">
+								<h5>思聪 王</h5>
+								<p>大闸蟹是最让人垂涎的食物，这样的湖鲜，用传统的清蒸就好，餐厅还用上了荷叶，添一丝清香。一只肉肥膏黄是大闸蟹，一杯黄酒，真是人间美事啊！(推荐)</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-1-3">
 						<div class="wrap-col">
-							<h3>Starters</h3>
-							<div class="post">
-								<a href="#"><img src="images/14.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/8.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/7.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
+							<h4>Location</h4>
+							<div class="wrap-map">
+								<iframe src="api/bdmap.html" width="100%" height="200"
+									frameborder="0" style="border:0"></iframe>
 							</div>
 						</div>
 					</div>
 					<div class="col-1-3">
 						<div class="wrap-col">
-							<h3>Salads</h3>
-							<div class="post">
-								<a href="#"><img src="images/13.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/4.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/5.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-1-3">
-						<div class="wrap-col">
-							<h3>Chef's Specials</h3>
-							<div class="post">
-								<a href="#"><img src="images/15.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/10.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/9.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-1-3">
-						<div class="wrap-col">
-							<h3>Fast Food</h3>
-							<div class="post">
-								<a href="#"><img src="images/14.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								  <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/8.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/7.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-1-3">
-						<div class="wrap-col">
-							<h3>Seafood Specials</h3>
-							<div class="post">
-								<a href="#"><img src="images/13.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/4.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/5.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">Lorem ipsum dolor</a></h5>
-								   <span>$25 - $26</span>
-								</div>
-							</div>
+							<h4>营业时间</h4>
+							<p>
+								<span>mon.</span> 17:00 - 21:00
+							</p>
+							<p>
+								<span>tue.-wed.</span> 16:30 - 21:00
+							</p>
+							<p>
+								<span>thu.-sat.</span> 16:30 - 21:00
+							</p>
+							<p>
+								<span>sun.</span> 11:00 - 21:00
+							</p>
+							<p>
+								<span>喝醉了回不去？</span><br /> 我们提供代驾服务！
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div> 
-	</div>
-</section>
-
-<!--////////////////////////////////////Footer-->
-<footer class="zerogrid">
-	<div class="wrap-footer">
-		<div class="row">
-			<div class="col-1-3">
-				<div class="wrap-col">
-					<h4>Customer Testimonials</h4>
-					<div class="row">
-						<img src="images/a-1.jpg">
-						<h5>Nick Roach</h5>
-						<p>Pellentesque elementum leo et justo dapibus convalli. In justo nibh, congue nec dapibus ac, placerat eget sem. Nunc consequat felis non elit ultricies in varius massa laoreet. Aenean lectus nisl, ellentesque in fermentum sit amet, convallis a lorem condimentum mollis. Aenean lectus nisl, ellentesque in fermentum sit amet.</p>
-					</div>
+			<div class="copyright">
+				<div class="wrapper">
+					Copyright &copy; 2016. NewBee Restaurant All rights reserved.
+					<ul class="quick-link f-right">
+						<li><a href="javascript:void(0);">Privacy Policy</a></li>
+						<li><a href="javascript:void(0);">Terms of Use</a></li>
+					</ul>
 				</div>
 			</div>
-			<div class="col-1-3">
-				<div class="wrap-col">
-					<h4>Location</h4>
-					<div class="wrap-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289259162295!2d-120.7989351!3d37.5246781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091042b3386acd7%3A0x3b4a4cedc60363dd!2sMain+St%2C+Denair%2C+CA+95316%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1434016649434" width="100%" height="200" frameborder="0" style="border:0"></iframe></div>
-				</div>
-			</div>
-			<div class="col-1-3">
-				<div class="wrap-col">
-					<h4>Open Daily</h4>
-					<p><span>mon.</span> 17:00 - 21:00</p>
-					<p><span>tue.-wed.</span> 16:30 â 21:00</p>
-					<p><span>thu.-sat.</span> 16:30 â 21:00</p>
-					<p><span>sun.</span> 11:00 â 21:00</p>
-					<p><span>Need help getting home?</span></br>
-					We will call a cab for you!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="copyright">
-		<div class="wrapper">
-			Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-			<ul class="quick-link f-right">
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Terms of Use</a></li>
-			</ul>
-		</div>
-	</div>
-</footer>
+		</footer>
 
 
-	<!-- js -->
-	<script src="js/classie.js"></script>
-	<script src="js/demo.js"></script>
-	
-</div>
-</body></html>
+		<!-- js -->
+		<script src="js/classie.js"></script>
+		<script src="js/demo.js"></script>
+
+	</div>
+</body>
+</html>

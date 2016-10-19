@@ -10,7 +10,7 @@
     <!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>ChinaZ</title>
+<title>牛逼西餐官网</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
@@ -41,47 +41,49 @@
 </head>
 <body>
 <div class="wrap-body">
-	<!--///////////////////////////////////////Top-->
-	<div class="top">
-		<div class="zerogrid">
-			<ul class="number f-left">
-				<li class="mail"><p>ContacUst@Gmail.com</p></li>
-				<li class="phone"><p>08 88888 88888</p></li>
-			</ul>
-			<ul class="top-social f-right">
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			</ul>
-		</div>
-	</div>
-	<!--////////////////////////////////////Header-->
-	<header>
-		<div class="zerogrid">
-			<center><div class="logo"><img src="images/logo.png"></div></center>
-		</div>
-	</header>
-	<div class="site-title">
-		<div class="zerogrid">
-			<div class="row">
-				<h2 class="t-center">我们这里最牛逼的西餐厅 - 纽约时报</h2>
+		<!--///////////////////////////////////////Top-->
+		<div class="top">
+			<div class="zerogrid">
+				<ul class="number f-left">
+					<li class="mail"><p>rainsho@126.com</p></li>
+					<li class="phone"><p>134 3719 0052</p></li>
+				</ul>
+				<ul class=" f-right">
+					<li><p>
+							<a href="../back-end/login.jsp" style="color:white;">登录后台管理</a>
+						</p></li>
+				</ul>
 			</div>
 		</div>
-	</div>
-    <!--//////////////////////////////////////Menu-->
-    <a href="#" class="nav-toggle">Toggle Navigation</a>
-    <nav class="cmn-tile-nav">
-		<ul class="clearfix">
-			<li class="colour-1"><a href="index.jsp">Home</a></li>
-			<li class="colour-2"><a href="menu.jsp">Menu</a></li>
-			<li class="colour-4"><a href="archive.jsp">Blog</a></li>
-			<li class="colour-5"><a href="staff.jsp">Our Staff</a></li>
-			<li class="colour-7"><a href="reservation.jsp">Reservation</a></li>
-			<li class="colour-8"><a href="gallery.jsp">Gallery</a></li>
-		</ul>
-    </nav>
+		<!--////////////////////////////////////Header-->
+		<header>
+			<div class="zerogrid">
+				<center>
+					<div class="logo">
+						<img src="images/logo.png">
+					</div>
+				</center>
+			</div>
+		</header>
+		<div class="site-title">
+			<div class="zerogrid">
+				<div class="row">
+					<h2 class="t-center">我们这里最牛逼的西餐厅 - 纽约时报</h2>
+				</div>
+			</div>
+		</div>
+		<!--//////////////////////////////////////Menu-->
+		<a href="#" class="nav-toggle">选择频道</a>
+		<nav class="cmn-tile-nav">
+			<ul class="clearfix">
+				<li class="colour-1"><a href="../IndexServlet">主页</a></li>
+				<li class="colour-2"><a href="../MenuServlet">菜单</a></li>
+				<li class="colour-4"><a href="../ArchiveServlet">动态</a></li>
+				<li class="colour-5"><a href="../StaffServlet">员工</a></li>
+				<li class="colour-7"><a href="../ReservationServletp">预订</a></li>
+				<li class="colour-8"><a href="../GalleryServlet">画廊</a></li>
+			</ul>
+		</nav>
 
 
 <!--////////////////////////////////////Container-->
@@ -90,44 +92,74 @@
 		<div class="crumbs">
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="archive.html">Blog</a></li>
+				<li><a href="news.html">News</a></li>
 			</ul>
 		</div>
 		<div id="main-content" class="col-2-3">
 			<div class="wrap-content">
 				<article>
 					<div class="art-header">
-						<a href="#"><h3>Nam libero tempore, cum soluta nobis est </h3></a>
-						<div class="info">Posted on June 22, 2010 in: <a href="#">Event</a></div>
+						<div class="entry-title"> 
+							<h2>Sharing Your Explorer’s Story: Man and Mother Nature</h2>
+						</div>
+						<div class="info">By <a href="#">Danny</a> on April 14, 2015</div>
 					</div>
 					<div class="art-content">
-						<img src="images/6.jpg" />
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+						<img src="images/14.jpg" />
+						<div class="excerpt"><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum exercitation ullamco laboris nisi ut aliquip.</p></div>
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+						<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet vultatup duista.</p></blockquote>
+						<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril.</p>
+						<h2>Heading 1</h2>
+						<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse lorem ipsum dolor sit amet.</p>
+						<h2>Heading 2</h2>
+						<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero eos et accusam et justo.</p>
+						<h2>Heading 3</h2>
+						<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum hendrerit in vulputate velit esse molestie.</p>
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+						<p><code>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</code></p>
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+						<div class="note">
+						  <ol>
+							<li>Lorem ipsum</li>
+							<li>Sit amet vultatup nonumy</li>
+							<li>Duista sed diam</li>
+						  </ol>
+						  <div class="clear"></div>
+						</div>
+						<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+						<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.</p>
 					</div>
-					<a class="button button02" href="#">MORE</a>
 				</article>
-				<article>
-					<div class="art-header">
-						<a href="#"><h3>Nam libero tempore, cum soluta nobis est </h3></a>
-						<div class="info">Posted on June 22, 2010 in: <a href="#">Event</a></div>
+				<div class="widget wid-related">
+					<div class="wrap-col">
+						<div class="wid-header">
+							<h5>Related Post</h5>
+						</div>
+						<div class="wid-content">
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a href="#"><img src="images/10.jpg" /></a>
+										<h4><a href="#">Vero eros et accumsan et iusto odio </a></h4>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a href="#"><img src="images/7.jpg" /></a>
+										<h4><a href="#">Vero eros et accumsan et iusto odio </a></h4>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a href="#"><img src="images/8.jpg" /></a>
+										<h4><a href="#">Vero eros et accumsan et iusto odio </a></h4>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="art-content">
-						<img src="images/4.jpg" />
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-					</div>
-					<a class="button button02" href="#">MORE</a>
-				</article>
-				<article>
-					<div class="art-header">
-						<a href="#"><h3>Nam libero tempore, cum soluta nobis est </h3></a>
-						<div class="info">Posted on June 22, 2010 in: <a href="#">Event</a></div>
-					</div>
-					<div class="art-content">
-						<img src="images/5.jpg" />
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-					</div>
-					<a class="button button02" href="#">MORE</a>
-				</article>
+				</div>
 			</div>
 		</div>
 		<div id="sidebar" class="col-1-3">
@@ -203,52 +235,65 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 </section>
+
 
 <!--////////////////////////////////////Footer-->
 <footer class="zerogrid">
-	<div class="wrap-footer">
-		<div class="row">
-			<div class="col-1-3">
-				<div class="wrap-col">
-					<h4>Customer Testimonials</h4>
-					<div class="row">
-						<img src="images/a-1.jpg">
-						<h5>Nick Roach</h5>
-						<p>Pellentesque elementum leo et justo dapibus convalli. In justo nibh, congue nec dapibus ac, placerat eget sem. Nunc consequat felis non elit ultricies in varius massa laoreet. Aenean lectus nisl, ellentesque in fermentum sit amet, convallis a lorem condimentum mollis. Aenean lectus nisl, ellentesque in fermentum sit amet.</p>
+			<div class="wrap-footer">
+				<div class="row">
+					<div class="col-1-3">
+						<div class="wrap-col">
+							<h4>客户反馈</h4>
+							<div class="row">
+								<img src="images/a-1.jpg">
+								<h5>思聪 王</h5>
+								<p>大闸蟹是最让人垂涎的食物，这样的湖鲜，用传统的清蒸就好，餐厅还用上了荷叶，添一丝清香。一只肉肥膏黄是大闸蟹，一杯黄酒，真是人间美事啊！(推荐)</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-1-3">
+						<div class="wrap-col">
+							<h4>Location</h4>
+							<div class="wrap-map">
+								<iframe src="api/bdmap.html" width="100%" height="200"
+									frameborder="0" style="border:0"></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="col-1-3">
+						<div class="wrap-col">
+							<h4>营业时间</h4>
+							<p>
+								<span>mon.</span> 17:00 - 21:00
+							</p>
+							<p>
+								<span>tue.-wed.</span> 16:30 - 21:00
+							</p>
+							<p>
+								<span>thu.-sat.</span> 16:30 - 21:00
+							</p>
+							<p>
+								<span>sun.</span> 11:00 - 21:00
+							</p>
+							<p>
+								<span>喝醉了回不去？</span><br /> 我们提供代驾服务！
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-1-3">
-				<div class="wrap-col">
-					<h4>Location</h4>
-					<div class="wrap-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289259162295!2d-120.7989351!3d37.5246781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091042b3386acd7%3A0x3b4a4cedc60363dd!2sMain+St%2C+Denair%2C+CA+95316%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1434016649434" width="100%" height="200" frameborder="0" style="border:0"></iframe></div>
+			<div class="copyright">
+				<div class="wrapper">
+					Copyright &copy; 2016. NewBee Restaurant All rights reserved.
+					<ul class="quick-link f-right">
+						<li><a href="javascript:void(0);">Privacy Policy</a></li>
+						<li><a href="javascript:void(0);">Terms of Use</a></li>
+					</ul>
 				</div>
 			</div>
-			<div class="col-1-3">
-				<div class="wrap-col">
-					<h4>Open Daily</h4>
-					<p><span>mon.</span> 17:00 - 21:00</p>
-					<p><span>tue.-wed.</span> 16:30 â 21:00</p>
-					<p><span>thu.-sat.</span> 16:30 â 21:00</p>
-					<p><span>sun.</span> 11:00 â 21:00</p>
-					<p><span>Need help getting home?</span></br>
-					We will call a cab for you!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="copyright">
-		<div class="wrapper">
-			Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-			<ul class="quick-link f-right">
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Terms of Use</a></li>
-			</ul>
-		</div>
-	</div>
-</footer>
+		</footer>
 
 
 	<!-- js -->
