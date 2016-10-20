@@ -160,10 +160,11 @@
 							<div class="wid-content">
 								<c:forEach var="f" items="${sessionScope.archive_flist }">
 									<div class="post">
-										<a><img src="front-end/${f.picture.ppath }" /></a>
+										<a href="MenuServlet"><img
+											src="front-end/${f.picture.ppath }" /></a>
 										<div class="wrapper">
 											<h5>
-												<a>${f.fname }</a>
+												<a href="MenuServlet">${f.fname }</a>
 											</h5>
 											<span>$&nbsp;${f.fprice } - ${f.fprice }</span>
 										</div>
@@ -186,11 +187,11 @@
 						<!---- Start Widget ---->
 						<div class="widget wid-gallery">
 							<div class="wid-header">
-								<h5>Gallery</h5>
+								<h5>画廊</h5>
 							</div>
 							<div class="wid-content">
 								<c:forEach var="p" items="${sessionScope.archive_plist }">
-									<a><img src="front-end/${p.ppath }"></a>
+									<a href="GalleryServlet"><img src="front-end/${p.ppath }"></a>
 								</c:forEach>
 							</div>
 						</div>
@@ -287,7 +288,6 @@
 								'<h4><a href="ArchiveServlet?nid=' + x.nid
 										+ '">' + dt + '\t' + x.ntag
 										+ '</a></h4>');
-
 					});
 					if (obj.state < 10) {
 						$('#a_more').text('没有更多了...');

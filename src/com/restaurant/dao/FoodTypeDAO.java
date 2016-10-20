@@ -69,4 +69,21 @@ public class FoodTypeDAO extends BaseDAO {
 		return -1;
 	}
 
+	public void editType(int ftid, String ftname) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		try {
+			con = getCon();
+			String sql = "update foodtype set ftname = ? where ftid = ?";
+			pst = con.prepareStatement(sql);
+			pst.setString(1, ftname);
+			pst.setInt(2, ftid);
+			pst.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, null);
+		}
+	}
+
 }

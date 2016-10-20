@@ -45,27 +45,48 @@ $(function() {
 	$('#span_add_type').hide();
 	$('#show_add_type').click(function() {
 		$('#span_add_type').toggle(400);
-		if ($('#show_add_type').text() == '添加类别>>') {
+		if ($('#show_add_type').text() == '修改类别>>') {
 			$('#show_add_type').text('收起<<');
 		} else {
-			$('#show_add_type').text('添加类别>>');
+			$('#show_add_type').text('修改类别>>');
 		}
 	});
 	$('#add_type').click(
 			function() {
-				ftname = $('#txt_add_type').val().trim();
+				var ftname = $('#txt_add_type').val().trim();
 				if (ftname == '') {
 					alert('不能添加空类别');
 					return;
 				}
-				if (confirm("确定新增" + ftname + "类吗？")) {
-					var url = "TypeAddServlet?ftname=" + ftname;
+				if (confirm('确定新增' + ftname + '类吗？')) {
+					var url = 'TypeAddServlet?ftname=' + ftname;
 					// AJAX
 					$.get(url, function(ftid) {
 						$('select[name="ftid"]').append(
 								'<option value="' + ftid + '">' + ftname
 										+ '</option>');
 						$('select[name="ftid"]').val(ftid);
+						$('#txt_add_type').val('');
+					});
+				}
+			});
+	$('#edit_type').click(
+			function() {
+				var ftname = $('#txt_add_type').val().trim();
+				var ori_ftid = $('select[name="ftid"]').val();
+				var ori_ftname = $('select[name="ftid"]').find(
+						'option:selected').text();
+				if (ftname == '') {
+					alert('类别名称不能为空');
+					return;
+				}
+				if (confirm('确定将' + ori_ftname + '类修改为' + ftname + '类吗？')) {
+					var url = "TypeEditServlet?ftname=" + ftname + '&ftid='
+							+ ori_ftid;
+					// AJAX
+					$.get(url, function() {
+						$('select[name="ftid"]').find('option:selected').text(
+								ftname);
 						$('#txt_add_type').val('');
 					});
 				}

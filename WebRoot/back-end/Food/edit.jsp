@@ -99,10 +99,11 @@ a:hover {
 						<c:forEach var="ft" items="${sessionScope.type_list }">
 							<option value="${ft.ftid }">${ft.ftname }</option>
 						</c:forEach>
-				</select>&nbsp;&nbsp;<a id="show_add_type" style="cursor: hand;">添加类别&gt;&gt;</a><span
+				</select>&nbsp;&nbsp;<a id="show_add_type" style="cursor: hand;">修改类别&gt;&gt;</a><span
 					id="span_add_type"><input type="text" id="txt_add_type"
 						style="width: 120px;" />&nbsp;&nbsp;<a class="btn btn-primary"
-						id="add_type">新增类别</a></span></td>
+						id="add_type">新增类别</a>&nbsp;&nbsp;<a class="btn btn-primary"
+						id="edit_type">修改类别</a></span></td>
 			</tr>
 			<tr>
 				<td class="tableleft">菜品名称</td>

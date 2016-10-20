@@ -142,30 +142,22 @@
 		<servlet-name>GalleryServlet</servlet-name>
 		<servlet-class>com.restaurant.front.GalleryServlet</servlet-class>
 	</servlet>
-  <servlet>
-    <servlet-name>ArchiveMoreServlet</servlet-name>
-    <servlet-class>com.restaurant.front.ArchiveMoreServlet</servlet-class>
-  </servlet>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<servlet>
+		<servlet-name>ArchiveMoreServlet</servlet-name>
+		<servlet-class>com.restaurant.front.ArchiveMoreServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MenuChartServlet</servlet-name>
+		<servlet-class>com.restaurant.front.MenuChartServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TypeEditServlet</servlet-name>
+		<servlet-class>com.restaurant.servlet.TypeEditServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OrderServlet</servlet-name>
+		<servlet-class>com.restaurant.front.OrderServlet</servlet-class>
+	</servlet>
 
 
 	<servlet-mapping>
@@ -308,10 +300,22 @@
 		<servlet-name>GalleryServlet</servlet-name>
 		<url-pattern>/GalleryServlet</url-pattern>
 	</servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ArchiveMoreServlet</servlet-name>
-    <url-pattern>/ArchiveMoreServlet</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ArchiveMoreServlet</servlet-name>
+		<url-pattern>/ArchiveMoreServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MenuChartServlet</servlet-name>
+		<url-pattern>/MenuChartServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TypeEditServlet</servlet-name>
+		<url-pattern>/TypeEditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderServlet</servlet-name>
+		<url-pattern>/OrderServlet</url-pattern>
+	</servlet-mapping>
 
 	<!-- configure filter -->
 	<filter>

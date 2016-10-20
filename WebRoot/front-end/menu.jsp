@@ -31,6 +31,10 @@
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
+
+<!-- mune_chart css -->
+<link rel="stylesheet" href="css/menu_chart.css">
+
 <!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -98,6 +102,38 @@
 						<li><a href="../IndexServlet">主页</a></li>
 						<li><a href="../MenuServlet">菜单</a></li>
 					</ul>
+					<div id="menu_chart">
+						<div id="chart_title">
+							<ul>
+								<li><a>已选菜品</a></li>
+							</ul>
+							<i class="ci-count" id="shopping-amount">${sessionScope.menu_chart_total_quant
+								+ 0 }</i>
+						</div>
+						<div id="chart_layer">
+							<div id="ordered">
+								<table style="width: 100%;">
+									<c:forEach var="mi" items="${sessionScope.menu_item }">
+										<tr>
+											<td><img src="${mi.food.picture.ppath }"></td>
+											<td>${mi.food.fname }</td>
+											<td>$${mi.food.fprice } × ${mi.quant }<br /> <a
+												href="javascript:del_food(${mi.food.fid });">删除</a></td>
+										</tr>
+									</c:forEach>
+								</table>
+							</div>
+							<div id="total">
+								<c:if test="${sessionScope.menu_chart_total_quant > 0 }">
+									<div>共${sessionScope.menu_chart_total_quant }份菜品
+										总计$${sessionScope.menu_chart_total_price }元</div>
+									<div>
+										<a id="btn_menu_chart" href="javascript:void(0);" onclick="order_food()">下单</a>
+									</div>
+								</c:if>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div id="main-content">
 					<div class="wrap-content">
@@ -116,8 +152,11 @@
 															<a><img src="${f.picture.ppath }"
 																alt="${f.picture.ppath }" /></a>
 															<div class="wrapper">
-																<h5>
-																	<a>${f.fname }</a>
+																<h5 style="position: relative;">
+																	<a title="你不来一个么">${f.fname }</a> <span
+																		class="food_detial" style="font-size: 10px;"><a
+																		href="javascript:add_food(${f.fid });">来一个</a><br />${f.fdetial
+																		}</span>
 																</h5>
 																<span>$&nbsp;${f.fprice } - ${f.fprice }</span>
 															</div>
@@ -195,6 +234,9 @@
 		<!-- js -->
 		<script src="js/classie.js"></script>
 		<script src="js/demo.js"></script>
+
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/menu.js"></script>
 
 	</div>
 </body>

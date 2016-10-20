@@ -1,0 +1,92 @@
+#menu_chart {
+	float: right;
+	height: 36px;
+	z-index: 20;
+	position: relative;
+}
+
+#chart_title {
+	position: relative;
+}
+
+#chart_layer {
+	display: none;
+	position: absolute;
+	background-color: white;
+}
+
+#menu_chart:hover #chart_layer {
+	display: block;
+	right: 0;
+	width: 308px;
+}
+
+#ordered table tr td {
+	padding: 2px 8px;
+}
+
+#ordered table tr td:first-child {
+	width: 80px;
+	text-align: center;
+}
+
+#ordered table tr td:first-child+td {
+	font-size: 14px;
+}
+
+#ordered table tr td:last-child {
+	width: 100px;
+	text-align: right;
+}
+
+#total {
+	padding: 2px 8px;
+	text-align: right;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.food_detial {
+	display: none;
+	position: absolute;
+	width: 160px;
+	background-color: white;
+	border: 1px dotted gainsboro;
+	padding: 4px;
+	z-index: 20;
+	line-height: 20px;
+}
+
+.wrapper h5:hover .food_detial {
+	display: block;
+}
+
+.ci-count {
+	position: absolute;
+	top: -12px;
+	left: 135px;
+	display: inline-block;
+	padding: 1px 2px;
+	font-size: 16px;
+	line-height: 16px;
+	color: #fff;
+	background-color: #c81623;
+	border-radius: 12px 12px 12px 1px;
+	min-width: 20px;
+	min-height: 20px;
+	text-align: center;
+}
+
+#btn_menu_chart {
+	display: inline-block;
+	position: relative;
+	width: 108px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	text-align: center;
+	font-size: 18px;
+	background: #654e2d;
+	margin: 6px 0;
+	border-radius: 6px;
+}
