@@ -155,40 +155,25 @@
 						<!---- Start Widget ---->
 						<div class="widget wid-post">
 							<div class="wid-header">
-								<h5>Latest Posts</h5>
+								<h5>新品推荐</h5>
 							</div>
 							<div class="wid-content">
-								<div class="post">
-									<a href="#"><img src="front-end/images/15.jpg" /></a>
-									<div class="wrapper">
-										<h5>
-											<a href="#">Lorem ipsum dolor</a>
-										</h5>
-										<span>$25 - $26</span>
+								<c:forEach var="f" items="${sessionScope.archive_flist }">
+									<div class="post">
+										<a><img src="front-end/${f.picture.ppath }" /></a>
+										<div class="wrapper">
+											<h5>
+												<a>${f.fname }</a>
+											</h5>
+											<span>$&nbsp;${f.fprice } - ${f.fprice }</span>
+										</div>
 									</div>
-								</div>
-								<div class="post">
-									<a href="#"><img src="front-end/images/14.jpg" /></a>
-									<div class="wrapper">
-										<h5>
-											<a href="#">Lorem ipsum dolor</a>
-										</h5>
-										<span>$25 - $26</span>
-									</div>
-								</div>
-								<div class="post">
-									<a href="#"><img src="front-end/images/13.jpg" /></a>
-									<div class="wrapper">
-										<h5>
-											<a href="#">Lorem ipsum dolor</a>
-										</h5>
-										<span>$25 - $26</span>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
 						</div>
 						<!---- Start Widget ---->
-						<div class="widget wid-tag">
+						<!-- 未启用tag功能 -->
+						<!-- <div class="widget wid-tag">
 							<div class="wid-header">
 								<h5>Tags</h5>
 							</div>
@@ -197,19 +182,16 @@
 									,</a> <a href="#">home ,</a> <a href="#">likes ,</a> <a href="#">photo
 									,</a> <a href="#">travel ,</a> <a href="#">video </a>
 							</div>
-						</div>
+						</div> -->
 						<!---- Start Widget ---->
 						<div class="widget wid-gallery">
 							<div class="wid-header">
 								<h5>Gallery</h5>
 							</div>
 							<div class="wid-content">
-								<a href="#"><img src="front-end/images/11.jpg"></a> <a
-									href="#"><img src="front-end/images/10.jpg"></a> <a
-									href="#"><img src="front-end/images/9.jpg"></a> <a
-									href="#"><img src="front-end/images/8.jpg"></a> <a
-									href="#"><img src="front-end/images/7.jpg"></a> <a
-									href="#"><img src="front-end/images/6.jpg"></a>
+								<c:forEach var="p" items="${sessionScope.archive_plist }">
+									<a><img src="front-end/${p.ppath }"></a>
+								</c:forEach>
 							</div>
 						</div>
 					</div>

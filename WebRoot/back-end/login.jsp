@@ -26,7 +26,7 @@
 <body>
 	<div class="login" id="login-box">
 		<h2>
-			管理登录<a href="front-end/index.jsp">返回网站主页</a>
+			管理登录<a href="IndexServlet">返回网站主页</a>
 		</h2>
 
 		<form name="form1" method="post" action="LoginServlet"

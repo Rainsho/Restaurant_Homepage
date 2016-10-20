@@ -22,19 +22,19 @@
 <body>
 	<%
 		String ck_usr = null;
-		Cookie[] ck_list = request.getCookies();
-		
-		if(ck_list!=null){
-		 	for (Cookie x : ck_list) {
-				if (x.getName().equals("usr")) {
-					ck_usr = x.getValue();
-				}
+			Cookie[] ck_list = request.getCookies();
+			
+			if(ck_list!=null){
+			 	for (Cookie x : ck_list) {
+			if (x.getName().equals("usr")) {
+				ck_usr = x.getValue();
 			}
 		}
+			}
 
-		if (ck_usr == null && request.getAttribute("usr") == null) {
-			response.sendRedirect("login.jsp");
-		}
+			if (ck_usr == null && request.getAttribute("usr") == null) {
+		response.sendRedirect("login.jsp");
+			}
 	%>
 	<div class="header">
 
@@ -44,7 +44,8 @@
 
 		<div class="dl-log">
 			欢迎您，<span class="dl-log-user">${requestScope.usr.getUname()}</span><a
-				href="back-end/login.jsp" title="退出系统" class="dl-log-quit">[退出]</a>
+				href="back-end/login.jsp" class="dl-log-quit">[退出]</a><a
+				href="IndexServlet" class="dl-log-quit">[返回网站主页]</a>
 		</div>
 	</div>
 	<div class="content">

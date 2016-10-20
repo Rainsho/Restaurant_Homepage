@@ -133,7 +133,7 @@ public class PictureDAO extends BaseDAO {
 		}
 		return null;
 	}
-	
+
 	public ArrayList<Picture> getShow() {
 		Connection con = null;
 		PreparedStatement pst = null;
@@ -142,6 +142,31 @@ public class PictureDAO extends BaseDAO {
 			con = getCon();
 			String sql = "select * from picture where pdisplay = 1";
 			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
+			ArrayList<Picture> list = new ArrayList<Picture>();
+			while (rs.next()) {
+				Picture obj = new Picture(rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getInt(4));
+				list.add(obj);
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+
+	public ArrayList<Picture> getTop(int top) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			String sql = "select top (?) * from picture where pdisplay = 1 order by pid desc";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, top);
 			rs = pst.executeQuery();
 			ArrayList<Picture> list = new ArrayList<Picture>();
 			while (rs.next()) {
