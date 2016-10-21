@@ -31,7 +31,7 @@ public class ReservationDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 a.*, b.* from reservation as a, [user] as b where a.uid = b.uid "
+			String sql = "select top 10 a.*, b.* from reservation as a, users as b where a.uid = b.uid "
 					+ "and a.resdate between ? and ? and a.resid not in "
 					+ "(select top (10*?-10) resid from reservation where resdate between ? and ? order by resdate desc) "
 					+ "order by resdate desc";

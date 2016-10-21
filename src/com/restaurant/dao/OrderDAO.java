@@ -17,7 +17,7 @@ public class OrderDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "insert into [order] (odate, oquant, ofee, ocheck) values (?, ?, ?, ?)";
+			String sql = "insert into orders (odate, oquant, ofee, ocheck) values (?, ?, ?, ?)";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, order.fmtDate());
 			pst.setInt(2, order.getOquant());
@@ -59,8 +59,8 @@ public class OrderDAO extends BaseDAO {
 		try {
 			con = getCon();
 			if (ocheck == -1) {
-				String sql = "select top 10 * from [order] where odate between ? and ? and oid not in "
-						+ "(select top (10*?-10) oid from [order] where odate between ? and ? order by odate desc) "
+				String sql = "select top 10 * from orders where odate between ? and ? and oid not in "
+						+ "(select top (10*?-10) oid from orders where odate between ? and ? order by odate desc) "
 						+ "order by odate desc";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, date_s);
@@ -70,8 +70,8 @@ public class OrderDAO extends BaseDAO {
 				pst.setString(5, date_t);
 				rs = pst.executeQuery();
 			} else {
-				String sql = "select top 10 * from [order] where odate between ? and ? and ocheck = ? and oid not in "
-						+ "(select top (10*?-10) oid from [order] where odate between ? and ? and ocheck = ? order by odate desc) "
+				String sql = "select top 10 * from orders where odate between ? and ? and ocheck = ? and oid not in "
+						+ "(select top (10*?-10) oid from orders where odate between ? and ? and ocheck = ? order by odate desc) "
 						+ "order by odate desc";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, date_s);
@@ -120,13 +120,13 @@ public class OrderDAO extends BaseDAO {
 		try {
 			con = getCon();
 			if (ocheck == -1) {
-				String sql = "select count(*) from [order] where odate between ? and ?";
+				String sql = "select count(*) from orders where odate between ? and ?";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, date_s);
 				pst.setString(2, date_t);
 				rs = pst.executeQuery();
 			} else {
-				String sql = "select count(*) from [order] where odate between ? and ? and ocheck = ?";
+				String sql = "select count(*) from orders where odate between ? and ? and ocheck = ?";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, date_s);
 				pst.setString(2, date_t);
@@ -149,7 +149,7 @@ public class OrderDAO extends BaseDAO {
 		PreparedStatement pst = null;
 		try {
 			con = getCon();
-			String sql = "update [order] set ocheck = ? where oid = ?";
+			String sql = "update orders set ocheck = ? where oid = ?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, 1);
 			pst.setInt(2, oid);
@@ -167,7 +167,7 @@ public class OrderDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from [order] where oid = ?";
+			String sql = "select * from orders where oid = ?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, oid);
 			rs = pst.executeQuery();

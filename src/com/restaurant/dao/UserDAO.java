@@ -15,7 +15,7 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from [user] where uname=? and upassword=?";
+			String sql = "select * from users where uname=? and upassword=?";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, uname);
 			pst.setString(2, upassword);
@@ -39,7 +39,7 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from [user]";
+			String sql = "select * from users";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 			ArrayList<User> list = new ArrayList<User>();
@@ -64,8 +64,8 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 * from [user] where uname like ? and utype like ? and uid not in"
-					+ " (select top (10*?-10) uid from [user] where uname like ? and utype like ?)";
+			String sql = "select top 10 * from users where uname like ? and utype like ? and uid not in"
+					+ " (select top (10*?-10) uid from users where uname like ? and utype like ?)";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, "%" + uname + "%");
 			pst.setString(2, "%" + utype + "%");
@@ -99,7 +99,7 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select count(*) from [user] where uname like ? and utype like ?";
+			String sql = "select count(*) from users where uname like ? and utype like ?";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, "%" + uname + "%");
 			pst.setString(2, "%" + utype + "%");
@@ -123,7 +123,7 @@ public class UserDAO extends BaseDAO {
 		PreparedStatement pst = null;
 		try {
 			con = getCon();
-			String sql = "delete from [user] where uid=?";
+			String sql = "delete from users where uid=?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, uid);
 			pst.execute();
@@ -140,7 +140,7 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from [user] where uid=?";
+			String sql = "select * from users where uid=?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, uid);
 			rs = pst.executeQuery();
@@ -165,7 +165,7 @@ public class UserDAO extends BaseDAO {
 			String sql = null;
 			switch (user.getUtype()) {
 			case 1:
-				sql = "insert into [user] (uname, upassword, utelphone, utype) values (?, ?, ?, ?)";
+				sql = "insert into users (uname, upassword, utelphone, utype) values (?, ?, ?, ?)";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, user.getUname());
 				pst.setString(2, user.getUpassword());
@@ -173,7 +173,7 @@ public class UserDAO extends BaseDAO {
 				pst.setInt(4, user.getUtype());
 				break;
 			case 2:
-				sql = "insert into [user] (uname, utelphone, utype, ustaffinfo, ustaffdisplay, upic) values (?, ?, ?, ?, ?, ?)";
+				sql = "insert into users (uname, utelphone, utype, ustaffinfo, ustaffdisplay, upic) values (?, ?, ?, ?, ?, ?)";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, user.getUname());
 				pst.setString(2, user.getUtelphone());
@@ -183,7 +183,7 @@ public class UserDAO extends BaseDAO {
 				pst.setString(6, user.getUpic());
 				break;
 			case 3:
-				sql = "insert into [user] (uname, utelphone, utype) values (?, ?, ?)";
+				sql = "insert into users (uname, utelphone, utype) values (?, ?, ?)";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, user.getUname());
 				pst.setString(2, user.getUtelphone());
@@ -206,7 +206,7 @@ public class UserDAO extends BaseDAO {
 			String sql = null;
 			switch (user.getUtype()) {
 			case 1:
-				sql = "update [user] set uname=?, upassword=?, utelphone=?, utype=? where uid=?";
+				sql = "update users set uname=?, upassword=?, utelphone=?, utype=? where uid=?";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, user.getUname());
 				pst.setString(2, user.getUpassword());
@@ -215,7 +215,7 @@ public class UserDAO extends BaseDAO {
 				pst.setInt(5, user.getUid());
 				break;
 			case 2:
-				sql = "update [user] set uname=?, utelphone=?, utype=?, ustaffinfo=?, ustaffdisplay=?, upic=? where uid=?";
+				sql = "update users set uname=?, utelphone=?, utype=?, ustaffinfo=?, ustaffdisplay=?, upic=? where uid=?";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, user.getUname());
 				pst.setString(2, user.getUtelphone());
@@ -226,7 +226,7 @@ public class UserDAO extends BaseDAO {
 				pst.setInt(7, user.getUid());
 				break;
 			case 3:
-				sql = "update [user] set uname=?, utelphone=?, utype=? where uid=?";
+				sql = "update users set uname=?, utelphone=?, utype=? where uid=?";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, user.getUname());
 				pst.setString(2, user.getUtelphone());
@@ -248,7 +248,7 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from [user] where utype = 2 and ustaffdisplay = 1";
+			String sql = "select * from users where utype = 2 and ustaffdisplay = 1";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 			ArrayList<User> list = new ArrayList<User>();
@@ -273,7 +273,7 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from [user] where utype = 3 and uname = ? and utelphone = ?";
+			String sql = "select * from users where utype = 3 and uname = ? and utelphone = ?";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, uname);
 			pst.setString(2, utelphone);

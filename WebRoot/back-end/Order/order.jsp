@@ -82,7 +82,7 @@ form select {
 }
 
 .load_more_div {
-	width: 300px;
+	min-width: 300px;
 }
 
 .load_more_div table * {
