@@ -34,7 +34,7 @@ public class ResLoadServlet extends HttpServlet {
 		} catch (Exception e) {
 			try {
 				page = Integer.parseInt(request.getSession()
-						.getAttribute("user_page").toString());
+						.getAttribute("res_page").toString());
 			} catch (Exception e2) {
 				page = 1;
 			}

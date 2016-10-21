@@ -7,6 +7,7 @@ public class Order {
 
 	private int oid;
 	private Calendar odate;
+	private int oquant;
 	private float ofee;
 	private int ocheck;
 
@@ -26,6 +27,14 @@ public class Order {
 		this.odate = odate;
 	}
 
+	public int getOquant() {
+		return oquant;
+	}
+
+	public void setOquant(int oquant) {
+		this.oquant = oquant;
+	}
+
 	public float getOfee() {
 		return ofee;
 	}
@@ -42,10 +51,11 @@ public class Order {
 		this.ocheck = ocheck;
 	}
 
-	public Order(int oid, Calendar odate, float ofee, int ocheck) {
+	public Order(int oid, Calendar odate, int oquant, float ofee, int ocheck) {
 		super();
 		this.oid = oid;
 		this.odate = odate;
+		this.oquant = oquant;
 		this.ofee = ofee;
 		this.ocheck = ocheck;
 	}

@@ -22,19 +22,19 @@
 <body>
 	<%
 		String ck_usr = null;
-			Cookie[] ck_list = request.getCookies();
-			
-			if(ck_list!=null){
-			 	for (Cookie x : ck_list) {
-			if (x.getName().equals("usr")) {
-				ck_usr = x.getValue();
-			}
+		Cookie[] ck_list = request.getCookies();
+		
+		if(ck_list!=null){
+		 	for (Cookie x : ck_list) {
+		if (x.getName().equals("usr")) {
+			ck_usr = x.getValue();
 		}
 			}
+		}
 
-			if (ck_usr == null && request.getAttribute("usr") == null) {
-		response.sendRedirect("login.jsp");
-			}
+		if (ck_usr == null && request.getAttribute("usr") == null) {
+			response.sendRedirect("login.jsp");
+		}
 	%>
 	<div class="header">
 
@@ -100,6 +100,10 @@
 						id : '26',
 						text : '画廊管理',
 						href : 'PicAllServlet'
+					}, {
+						id : '27',
+						text : '订单管理',
+						href : 'OrderLoadServlet'
 					} ]
 				} ]
 			} ];

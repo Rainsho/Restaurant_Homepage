@@ -158,7 +158,14 @@
 		<servlet-name>OrderServlet</servlet-name>
 		<servlet-class>com.restaurant.front.OrderServlet</servlet-class>
 	</servlet>
-
+	<servlet>
+		<servlet-name>OrderLoadServlet</servlet-name>
+		<servlet-class>com.restaurant.servlet.OrderLoadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OrderCtrlServlet</servlet-name>
+		<servlet-class>com.restaurant.servlet.OrderCtrlServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
@@ -315,6 +322,14 @@
 	<servlet-mapping>
 		<servlet-name>OrderServlet</servlet-name>
 		<url-pattern>/OrderServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderLoadServlet</servlet-name>
+		<url-pattern>/OrderLoadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderCtrlServlet</servlet-name>
+		<url-pattern>/OrderCtrlServlet</url-pattern>
 	</servlet-mapping>
 
 	<!-- configure filter -->

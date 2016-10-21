@@ -3,6 +3,7 @@ package com.restaurant.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -17,6 +18,13 @@ public class ReservationDAO extends BaseDAO {
 		}
 		if (date_t == null || date_t.equals("")) {
 			date_t = "9999-12-31";
+		} else {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			String[] s = date_t.split("-");
+			Calendar cal = Calendar.getInstance();
+			cal.set(Integer.parseInt(s[0]), Integer.parseInt(s[1]) - 1,
+					Integer.parseInt(s[2]) + 1);
+			date_t = sdf.format(cal.getTime());
 		}
 		Connection con = null;
 		PreparedStatement pst = null;
@@ -60,6 +68,13 @@ public class ReservationDAO extends BaseDAO {
 		}
 		if (date_t == null || date_t.equals("")) {
 			date_t = "9999-12-31";
+		} else {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			String[] s = date_t.split("-");
+			Calendar cal = Calendar.getInstance();
+			cal.set(Integer.parseInt(s[0]), Integer.parseInt(s[1]) - 1,
+					Integer.parseInt(s[2]) + 1);
+			date_t = sdf.format(cal.getTime());
 		}
 		Connection con = null;
 		PreparedStatement pst = null;
