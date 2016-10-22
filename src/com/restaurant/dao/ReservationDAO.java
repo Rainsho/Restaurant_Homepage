@@ -31,16 +31,12 @@ public class ReservationDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 a.*, b.* from reservation as a, users as b where a.uid = b.uid "
-					+ "and a.resdate between ? and ? and a.resid not in "
-					+ "(select top (10*?-10) resid from reservation where resdate between ? and ? order by resdate desc) "
-					+ "order by resdate desc";
+			String sql = "select a.*, b.* from reservation as a, users as b where a.uid = b.uid "
+					+ "and a.resdate between ? and ? order by resdate desc limit 10 offset ?";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, date_s);
 			pst.setString(2, date_t);
-			pst.setInt(3, page);
-			pst.setString(4, date_s);
-			pst.setString(5, date_t);
+			pst.setInt(3, page * 10 - 10);
 			rs = pst.executeQuery();
 			ArrayList<Reservation> list = new ArrayList<Reservation>();
 			while (rs.next()) {

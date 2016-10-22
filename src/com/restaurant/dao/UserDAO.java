@@ -64,17 +64,13 @@ public class UserDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 * from users where uname like ? and utype like ? and uid not in"
-					+ " (select top (10*?-10) uid from users where uname like ? and utype like ?)";
+			String sql = "select * from users where uname like ? and utype like ? limit 10 offset ?";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, "%" + uname + "%");
 			pst.setString(2, "%" + utype + "%");
-			pst.setInt(3, page);
-			pst.setString(4, "%" + uname + "%");
-			pst.setString(5, "%" + utype + "%");
+			pst.setInt(3, page * 10 - 10);
 			if (utype == 0) {
 				pst.setString(2, "%");
-				pst.setString(5, "%");
 			}
 			rs = pst.executeQuery();
 			ArrayList<User> list = new ArrayList<User>();

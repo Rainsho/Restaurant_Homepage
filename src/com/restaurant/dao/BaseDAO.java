@@ -7,25 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BaseDAO {
-	// MSSQLSERVER
-	private static String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	private static String URL = "jdbc:sqlserver://127.0.0.1:1433;DataBaseName=";
-	private static String USER = "sa";
-	private static String PSWD = "root";
-	private static String DB = "Restaurant";
-	private static String SSL = "";
 
 	// MY SQL
-	static {
-		if (!System.getProperties().getProperty("os.name").equals("Windows 7")) {
-			DRIVER = "com.mysql.jdbc.Driver";
-			URL = "jdbc:mysql://127.0.0.1:3306/";
-			USER = "root";
-			PSWD = "rain@sql";
-			DB = "Restaurant";
-			SSL = "?useSSL=false&characterEncoding=utf8";
-		}
-	}
+	private static final String DRIVER = "com.mysql.jdbc.Driver";
+	private static final String URL = "jdbc:mysql://127.0.0.1:3306/";
+	private static final String USER = "root";
+	private static final String PSWD = "rain@sql";
+	private static final String DB = "Restaurant";
+	private static final String SSL = "?useSSL=false&characterEncoding=utf8";
 
 	public Connection getCon() {
 		try {

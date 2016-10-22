@@ -131,7 +131,7 @@ public class NewsDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select * from news order by ndate desc";
+			String sql = "select * from news order by ndate desc limit 1";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 			if (rs.next()) {
@@ -178,9 +178,9 @@ public class NewsDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 * from news where nid not in (select top (10*?-10) nid from news order by ndate desc) order by ndate desc";
+			String sql = "select * from news order by ndate desc limit 10 offset ?";
 			pst = con.prepareStatement(sql);
-			pst.setInt(1, page);
+			pst.setInt(1, page * 10 - 10);
 			rs = pst.executeQuery();
 			ArrayList<News> list = new ArrayList<News>();
 			while (rs.next()) {

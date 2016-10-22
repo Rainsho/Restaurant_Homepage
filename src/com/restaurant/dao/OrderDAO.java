@@ -59,28 +59,19 @@ public class OrderDAO extends BaseDAO {
 		try {
 			con = getCon();
 			if (ocheck == -1) {
-				String sql = "select top 10 * from orders where odate between ? and ? and oid not in "
-						+ "(select top (10*?-10) oid from orders where odate between ? and ? order by odate desc) "
-						+ "order by odate desc";
+				String sql = "select * from orders where odate between ? and ? order by odate desc limit 10 offset ?";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, date_s);
 				pst.setString(2, date_t);
-				pst.setInt(3, page);
-				pst.setString(4, date_s);
-				pst.setString(5, date_t);
+				pst.setInt(3, page * 10 - 10);
 				rs = pst.executeQuery();
 			} else {
-				String sql = "select top 10 * from orders where odate between ? and ? and ocheck = ? and oid not in "
-						+ "(select top (10*?-10) oid from orders where odate between ? and ? and ocheck = ? order by odate desc) "
-						+ "order by odate desc";
+				String sql = "select * from orders where odate between ? and ? and ocheck = ? order by odate desc limit 10 offset ?";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, date_s);
 				pst.setString(2, date_t);
 				pst.setInt(3, ocheck);
-				pst.setInt(4, page);
-				pst.setString(5, date_s);
-				pst.setString(6, date_t);
-				pst.setInt(7, ocheck);
+				pst.setInt(4, page * 10 - 10);
 				rs = pst.executeQuery();
 			}
 			ArrayList<Order> list = new ArrayList<Order>();

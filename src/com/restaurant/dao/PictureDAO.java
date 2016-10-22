@@ -93,9 +93,9 @@ public class PictureDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 * from picture where pid not in (select top (10*?-10) pid from picture)";
+			String sql = "select * from picture limit 10 offset ?";
 			pst = con.prepareStatement(sql);
-			pst.setInt(1, page);
+			pst.setInt(1, page * 10 - 10);
 			rs = pst.executeQuery();
 			ArrayList<Picture> list = new ArrayList<Picture>();
 			while (rs.next()) {
@@ -164,7 +164,7 @@ public class PictureDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top (?) * from picture where pdisplay = 1 order by pid desc";
+			String sql = "select * from picture where pdisplay = 1 order by pid desc limit ?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, top);
 			rs = pst.executeQuery();

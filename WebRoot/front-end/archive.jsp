@@ -148,8 +148,8 @@
 								<h5>关于我们</h5>
 							</div>
 							<div class="wid-content">
-								<img src="front-end/images/indoor1.jpeg" />
-								<p>新派粤菜食府龙景轩位于酒店四楼，可饱览海港绝美景观，加上选用本地最新鲜的高级食材入馔，配合在当地享负盛名的精英厨师团队，实为天作之合。</p>
+								<img src="front-end/images/tree1.jpeg" />
+								<p>我们倡导轻食主义，一种清淡的低热量高蛋白食物，可保证不会摄入过多的卡路里，但同时提供足够的营养，让您保持裹腹而非胀腹，使您在非饥饿的同时保持良好的状态。</p>
 							</div>
 						</div>
 						<!---- Start Widget ---->

@@ -17,13 +17,12 @@ public class FoodDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 a.*, b.*, c.* from food as a, foodtype as b, picture as c "
+			String sql = "select a.*, b.*, c.* from food as a, foodtype as b, picture as c "
 					+ "where a.ftid = b.ftid and a.pid = c.pid and a.fname like ? "
-					+ "and a.fid not in (select top (10*?-10) fid from food where fname like ?)";
+					+ "limit 10 offset ?";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, "%" + fname + "%");
-			pst.setInt(2, page);
-			pst.setString(3, "%" + fname + "%");
+			pst.setInt(2, page * 10 - 10);
 			rs = pst.executeQuery();
 			ArrayList<Food> list = new ArrayList<Food>();
 			while (rs.next()) {
@@ -107,7 +106,7 @@ public class FoodDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top 10 a.*, b.*, c.* from food as a, foodtype as b, picture as c "
+			String sql = "select a.*, b.*, c.* from food as a, foodtype as b, picture as c "
 					+ "where a.ftid = b.ftid and a.pid = c.pid and a.fid = ?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, fid);
@@ -183,8 +182,8 @@ public class FoodDAO extends BaseDAO {
 		ResultSet rs = null;
 		try {
 			con = getCon();
-			String sql = "select top (?) a.*, b.*, c.* from food as a, foodtype as b, picture as c "
-					+ "where a.ftid = b.ftid and a.pid = c.pid order by a.fid desc";
+			String sql = "select a.*, b.*, c.* from food as a, foodtype as b, picture as c "
+					+ "where a.ftid = b.ftid and a.pid = c.pid order by a.fid desc limit ?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, top);
 			rs = pst.executeQuery();

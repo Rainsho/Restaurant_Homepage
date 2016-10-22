@@ -44,7 +44,7 @@ public class PicUploadServlet extends HttpServlet {
 		Files fs = smt.getFiles();
 		File f = fs.getFile(0);
 
-		String path = getServletContext().getRealPath("front-end\\upload");
+		String path = getServletContext().getRealPath("front-end/upload");
 		String fn = f.getFileName();
 		String ext = f.getFileExt();
 
@@ -52,14 +52,14 @@ public class PicUploadServlet extends HttpServlet {
 		fn += "." + ext;
 
 		try {
-			f.saveAs(path + "\\" + fn);
+			f.saveAs(path + "/" + fn);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		Picture pic = new Picture();
 		pic.setPname(fn);
-		pic.setPpath("upload\\" + fn);
+		pic.setPpath("upload/" + fn);
 
 		PictureDAO dao = new PictureDAO();
 		dao.addPic(pic);
