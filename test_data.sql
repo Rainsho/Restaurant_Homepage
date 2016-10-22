@@ -1,7 +1,7 @@
 insert into foodtype (ftname) values ('Pasta Plates'),('Starters'),('Salads'),('Chef''s Specials'),('Fast Food'),('Seafood Specials');
 
 insert into picture (pname, ppath)
-values ('404','upload\404.jpg'),('10','images\10.jpg'),('11','images\11.jpg'),('12','images\12.jpg'),('13','images\13.jpg'),('14','images\14.jpg'),('15','images\15.jpg'),('4','images\4.jpg'),('5','images\5.jpg'),('6','images\6.jpg'),('7','images\7.jpg'),('8','images\8.jpg'),('9','images\9.jpg'),('a-1','images\a-1.jpg'),('banner1','images\banner1.jpg'),('banner2','images\banner2.jpg'),('banner3','images\banner3.jpg'),('bg-1','images\bg-1.png'),('bg-2','images\bg-2.png'),('bg-3','images\bg-3.png'),('bg-header','images\bg-header.png'),('bg','images\bg.png'),('chef-1','images\chef-1.jpg'),('chef-2','images\chef-2.jpg'),('chef-3','images\chef-3.jpg'),('chef-4','images\chef-4.jpg'),('chef','images\chef.jpg'),('fast-food','images\fast-food.jpg'),('logo','images\logo.png'),('Mail','images\Mail.png'),('menu','images\menu.jpg'),('Phone','images\Phone.png'),('preview','images\preview.jpg'),('reservation','images\reservation.jpg');
+values ('404','upload/404.jpg'),('10','images/10.jpg'),('11','images/11.jpg'),('12','images/12.jpg'),('13','images/13.jpg'),('14','images/14.jpg'),('15','images/15.jpg'),('4','images/4.jpg'),('5','images/5.jpg'),('6','images/6.jpg'),('7','images/7.jpg'),('8','images/8.jpg'),('9','images/9.jpg'),('a-1','images/a-1.jpg'),('banner1','images/banner1.jpg'),('banner2','images/banner2.jpg'),('banner3','images/banner3.jpg'),('bg-1','images/bg-1.png'),('bg-2','images/bg-2.png'),('bg-3','images/bg-3.png'),('bg-header','images/bg-header.png'),('bg','images/bg.png'),('chef-1','images/chef-1.jpg'),('chef-2','images/chef-2.jpg'),('chef-3','images/chef-3.jpg'),('chef-4','images/chef-4.jpg'),('chef','images/chef.jpg'),('fast-food','images/fast-food.jpg'),('logo','images/logo.png'),('Mail','images/Mail.png'),('menu','images/menu.jpg'),('Phone','images/Phone.png'),('preview','images/preview.jpg'),('reservation','images/reservation.jpg');
 
 insert into food (ftid, pid, fname, fdetial, fprice) 
 values ('1','4','food1','food1_detial','99'),('1','5','food2','food2_detial','99'),('1','6','food3','food3_detial','99'),('2','7','food4','food4_detial','99'),('2','8','food5','food5_detial','99'),('2','9','food6','food6_detial','99'),('3','10','food7','food7_detial','99'),('3','11','food8','food8_detial','99'),('3','12','food9','food9_detial','99'),('4','13','food10','food10_detial','99'),('4','14','food11','food11_detial','99'),('4','15','food12','food12_detial','99'),('5','4','food13','food13_detial','99'),('5','5','food14','food14_detial','99'),('5','6','food15','food15_detial','99'),('6','7','food16','food16_detial','99'),('6','8','food17','food17_detial','99'),('6','9','food18','food18_detial','99');
@@ -9,10 +9,10 @@ values ('1','4','food1','food1_detial','99'),('1','5','food2','food2_detial','99
 insert into users (uname, upassword, utype) values ('admin', 'admin', 1);
 insert into users (uname, utelphone) values ('user1', '15512345678'), ('user2', '18876543210');
 insert into users (uname, utype, upic)
-values ('chef1', '2', 'images\chef-1.jpg'),
-('chef2', '2', 'images\chef-2.jpg'),
-('chef3', '2', 'images\chef-3.jpg'),
-('chef4', '2', 'images\chef-4.jpg')
+values ('chef1', '2', 'images/chef-1.jpg'),
+('chef2', '2', 'images/chef-2.jpg'),
+('chef3', '2', 'images/chef-3.jpg'),
+('chef4', '2', 'images/chef-4.jpg')
 
 insert into reservation (uid, restitle, resdate, resinfo, resseat)
 values (2, 'birthday part', '2016-10-1 19:00:00', 'sth...', '10'),(3, 'supper', '2017-1-1 5:18:20', 'sth...', '2');
