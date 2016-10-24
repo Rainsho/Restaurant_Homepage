@@ -43,7 +43,6 @@ public class VerifyCodeServlet extends HttpServlet {
 
 		// verify code
 		char[] list = "abcdefghijklmnopqrstuvwxyz0123456789".toCharArray();
-		list = new char[] { '1', '2' }; // easy mode
 		String verifycode = "";
 		Random rnd = new Random();
 		for (int i = 0; i < 4; i++) {
