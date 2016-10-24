@@ -43,10 +43,11 @@ public class MenuChartServlet extends HttpServlet {
 		if (type.equals("add")) {
 			FoodDAO dao = new FoodDAO();
 			MenuItem mi = menu_map.get(fid);
+			int quant = Integer.parseInt(request.getParameter("quant"));
 			if (mi == null) {
-				mi = new MenuItem(dao.getById(fid), 1);
+				mi = new MenuItem(dao.getById(fid), quant);
 			} else {
-				mi.setQuant(mi.getQuant() + 1);
+				mi.setQuant(mi.getQuant() + quant);
 			}
 			menu_map.put(fid, mi);
 		}

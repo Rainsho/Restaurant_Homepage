@@ -1,10 +1,18 @@
 function add_food(fid) {
+	var quant = $('input[name="n_fid_' + fid + '"]').val();
 	$.post('../MenuChartServlet', {
 		fid : fid,
-		type : 'add'
+		type : 'add',
+		quant : quant
 	}, function(data) {
 		reload_chart(data);
-		$('a[href="javascript:add_food(' + fid + ');"]').text('再来一个');
+		// $('a[href="javascript:add_food(' + fid + ');"]').text('再来一个');
+		$('input[name="n_fid_' + fid + '"]').val(1);
+		$('input[name="n_fid_' + fid + '"]').next('span').text(
+				'已点' + quant + '份!');
+		var img = $('input[name="n_fid_' + fid + '"]').parent().parent()
+				.parent().prev().children('img');
+		MoveBox(img);
 	});
 }
 
@@ -14,7 +22,7 @@ function del_food(fid) {
 		type : 'del'
 	}, function(data) {
 		reload_chart(data);
-		$('a[href="javascript:add_food(' + fid + ');"]').text('来一个');
+		// $('a[href="javascript:add_food(' + fid + ');"]').text('来一个');
 	});
 }
 
@@ -62,4 +70,36 @@ function order_food() {
 			$('#shopping-amount').text(0);
 		});
 	}
+}
+
+// 加点动画
+function MoveBox(obj) {
+	var conLeft = $('div .wrap-container').offset().left;
+	$(obj).css({
+		'position' : 'absolute',
+		'z-index' : '500'
+	});
+	$(obj).animate(
+			{
+				'left' : ($('#menu_chart').offset().left - conLeft
+						- $('#menu_chart').width() - 50)
+						+ 'px',
+				'top' : ($(document).scrollTop() - 200) + 'px',
+				'width' : '100px'
+			},
+			500,
+			function() {
+				$(obj)
+						.animate(
+								{
+									'left' : ($('#menu_chart').offset().left
+											- conLeft + 40)
+											+ 'px',
+									'top' : '-10px',
+									'width' : '50px',
+									'opacity' : '0.1'
+								}, 500, function() {
+									$(obj).removeAttr('style');
+								});
+			});
 }

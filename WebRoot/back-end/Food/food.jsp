@@ -56,7 +56,7 @@ body {
 			<th>编号</th>
 			<th>菜品类别</th>
 			<th>菜品名称</th>
-			<th>菜品描述</th>
+			<th width="40%">菜品描述</th>
 			<th>菜品单价</th>
 			<th>菜品图片</th>
 			<th>管理操作</th>

@@ -128,7 +128,8 @@
 									<div>共${sessionScope.menu_chart_total_quant }份菜品
 										总计$${sessionScope.menu_chart_total_price }元</div>
 									<div>
-										<a id="btn_menu_chart" href="javascript:void(0);" onclick="order_food()">下单</a>
+										<a id="btn_menu_chart" href="javascript:void(0);"
+											onclick="order_food()">下单</a>
 									</div>
 								</c:if>
 							</div>
@@ -154,9 +155,14 @@
 															<div class="wrapper">
 																<h5 style="position: relative;">
 																	<a title="你不来一个么">${f.fname }</a> <span
-																		class="food_detial" style="font-size: 10px;"><a
-																		href="javascript:add_food(${f.fid });">来一个</a><br />${f.fdetial
-																		}</span>
+																		class="food_detial" style="font-size: 10px;">份数：<input
+																		type="number" value="1" min="1" max="20"
+																		name="n_fid_${f.fid }"
+																		style="width: 40px; border: 1px dotted gainsboro;margin-right: 4px;" /><span
+																		style="font-size: 10px;"></span><br /> <a
+																		href="javascript:add_food(${f.fid });">点餐</a><br />${f.fdetial
+																		}
+																	</span>
 																</h5>
 																<span>$&nbsp;${f.fprice } - ${f.fprice }</span>
 															</div>
