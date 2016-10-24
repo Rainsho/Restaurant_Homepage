@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BaseDAO {
+	
 	// MSSQLSERVER
 	private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private static final String URL = "jdbc:sqlserver://127.0.0.1:1433;DataBaseName=";
