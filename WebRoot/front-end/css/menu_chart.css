@@ -57,7 +57,7 @@
 	line-height: 20px;
 }
 
-.wrapper h5:hover .food_detial {
+.post:hover .food_detial {
 	display: block;
 }
 
