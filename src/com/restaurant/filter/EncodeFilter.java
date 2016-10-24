@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 public class EncodeFilter implements Filter {
 
 	private String encode;
+	private String uricode;
 
 	@Override
 	public void destroy() {
@@ -32,7 +33,7 @@ public class EncodeFilter implements Filter {
 				public String getParameter(String name) {
 					try {
 						return new String(super.getParameter(name).getBytes(
-								"iso-8859-1"), encode);
+								uricode), encode);
 					} catch (UnsupportedEncodingException e) {
 						e.printStackTrace();
 						return null;
@@ -53,6 +54,10 @@ public class EncodeFilter implements Filter {
 		encode = filterConfig.getInitParameter("SetEncode");
 		if (encode == null) {
 			encode = "UTF-8";
+		}
+		uricode = filterConfig.getInitParameter("URIEncode");
+		if (uricode == null) {
+			uricode = "UTF-8";
 		}
 	}
 

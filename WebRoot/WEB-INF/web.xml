@@ -340,6 +340,10 @@
 			<param-name>SetEncode</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
+		<init-param>
+			<param-name>URIEncode</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
 		<filter-name>EncodeFilter</filter-name>
