@@ -59,7 +59,7 @@
 				</ul>
 				<ul class=" f-right">
 					<li><p>
-							<a href="../back-end/login.jsp" style="color:white;">登录后台管理</a>
+							<a href="../back-end/index.jsp" style="color:white;">登录后台管理</a>
 						</p></li>
 				</ul>
 			</div>
