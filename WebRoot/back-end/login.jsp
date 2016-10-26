@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -37,14 +38,15 @@
 			<input type="text" name="username" class="ipt" value="管理帐号"
 				onfocus="if(this.value=='管理帐号'){this.value='';}"
 				onblur="if(this.value==''){this.value='管理帐号';}" /> <input
-				type="password" class="ipt" name="password" value="" /> <input
+				type="password" class="ipt" name="password" value="" /><span
+				<c:if test="${sessionScope.FAILED_TIMES < 2 }">style="display:none;"</c:if>><input
 				id="vdcode" type="text" name="verifycode" class="ipt yzm"
 				value="验证码" onfocus="if(this.value=='验证码'){this.value='';}"
 				onblur="if(this.value==''){this.value='验证码';}" /> <a><img
-				id="vdimgck" align="middle" onClick="cg_code()"
-				src="VerifyCodeServlet" width="80" height="31" /></a> <a
-				href="javascript:void(0);" onClick="cg_code()">&nbsp;&nbsp;&nbsp;&nbsp;看不清
-			</a> <input type="submit" name="sm1" class="button" value="" onclick=""
+					id="vdimgck" align="middle" onClick="cg_code()"
+					src="VerifyCodeServlet" width="80" height="31" /></a> <a
+				href="javascript:void(0);" onClick="cg_code()">&nbsp;看不清 </a></span><input
+				type="submit" name="sm1" class="button" value="" onclick=""
 				style="CURSOR: hand" />
 		</form>
 

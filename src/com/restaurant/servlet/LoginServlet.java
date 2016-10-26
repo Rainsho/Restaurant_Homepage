@@ -33,6 +33,10 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String verifycode = request.getParameter("verifycode");
 
+		// 免验证码判断
+		int failed_times = Integer.parseInt(request.getSession()
+				.getAttribute("FAILED_TIMES").toString());
+
 		// 重启服务器时，容易空指针异常
 		if (request.getSession().getAttribute("verifycode") == null) {
 			response.sendRedirect("back-end/login.jsp");
@@ -40,33 +44,37 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		// check verify code
-		if (!verifycode.equals(request.getSession().getAttribute("verifycode")
-				.toString())) {
-			request.getSession().setAttribute("loginmsg", "验证码错误");
-			response.sendRedirect("back-end/login.jsp");
-			return;
+		if (failed_times >= 2) {
+			if (!verifycode.equals(request.getSession()
+					.getAttribute("verifycode").toString())) {
+				request.getSession().setAttribute("loginmsg", "验证码错误");
+				response.sendRedirect("back-end/login.jsp");
+				return;
+			}
 		}
 
 		UserDAO dao = new UserDAO();
 		User usr = dao.login(username, password);
 
-		// check logined
-		@SuppressWarnings("unchecked")
-		HashSet<HttpSession> session_set = (HashSet<HttpSession>) getServletContext()
-				.getAttribute("session_set");
-		for (HttpSession x : session_set) {
-			if (x != request.getSession()) {
-				User logined = (User) x.getAttribute("LOGINED_USER");
-				if (logined != null && logined.getUid() == usr.getUid()) {
-					x.removeAttribute("LOGINED_USER");
-					x.setAttribute("loginmsg", "您的账号已在别处登录！");
+		if (usr != null) {
+			// check logined
+			@SuppressWarnings("unchecked")
+			HashSet<HttpSession> session_set = (HashSet<HttpSession>) getServletContext()
+					.getAttribute("session_set");
+			for (HttpSession x : session_set) {
+				if (x != request.getSession()) {
+					User logined = (User) x.getAttribute("LOGINED_USER");
+					if (logined != null && logined.getUid() == usr.getUid()) {
+						x.removeAttribute("LOGINED_USER");
+						x.setAttribute("loginmsg", "您的账号已在别处登录！");
+						x.setAttribute("FAILED_TIMES", 9);
+					}
 				}
 			}
-		}
-
-		if (usr != null) {
 			// clear loginmsg
 			request.getSession().removeAttribute("loginmsg");
+			// clear FAILED_TIMES
+			request.getSession().setAttribute("FAILED_TIMES", 0);
 			// cookie function
 			// default encode with ASCII
 			Cookie ck = new Cookie("usr", "find_usr_in_cookie");
@@ -81,6 +89,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("back-end/index.jsp");
 		} else {
 			request.getSession().setAttribute("loginmsg", "账号或密码错误");
+			request.getSession().setAttribute("FAILED_TIMES", failed_times + 1);
 			response.sendRedirect("back-end/login.jsp");
 		}
 

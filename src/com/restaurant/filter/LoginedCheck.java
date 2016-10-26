@@ -21,6 +21,8 @@ public class LoginedCheck implements HttpSessionListener {
 		se.getSession().getServletContext()
 				.setAttribute("session_set", session_set);
 		
+		se.getSession().setAttribute("FAILED_TIMES", 0);
+		
 	}
 
 	@Override

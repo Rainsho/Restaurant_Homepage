@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.restaurant.dao.OrderDAO;
 import com.restaurant.entity.Order;
+import com.restaurant.entity.OrderSum;
 
 public class OrderLoadServlet extends HttpServlet {
 
@@ -89,6 +90,10 @@ public class OrderLoadServlet extends HttpServlet {
 		request.getSession().setAttribute("ord_ocheck", ocheck);
 		request.getSession().setAttribute("ord_total", ord_total);
 		request.getSession().setAttribute("ord_total_page", ord_total_page);
+
+		// 后台小计功能
+		OrderSum ordersum = dao.getSum(date_s, date_t, ocheck);
+		request.getSession().setAttribute("ordersum", ordersum);
 
 		response.sendRedirect("back-end/Order/order.jsp");
 
