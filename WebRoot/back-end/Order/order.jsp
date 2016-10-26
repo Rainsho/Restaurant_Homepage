@@ -130,7 +130,7 @@ form select {
 		<a href="OrderLoadServlet?date_s=&date_t=&ocheck=-1"
 			class="btn btn-primary">显示所有</a>
 	</form>
-	<div style="margin: 0px 20px -5px 20px;">所选区间内，共售出${sessionScope.ordersum.count
+	<div style="margin: 0px 2% -5px 2%;">所选区间内，共售出${sessionScope.ordersum.count
 		}单，总计${sessionScope.ordersum.sum_quant
 		}件商品，合计${sessionScope.ordersum.sum_fee }元</div>
 	<table class="table table-bordered table-hover definewidth m10">
