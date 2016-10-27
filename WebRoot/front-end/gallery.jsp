@@ -43,6 +43,19 @@
 		<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
 
+<!-- 动画效果 -->
+<link rel="stylesheet" href="css/chocolat.css" type="text/css"
+	media="screen">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css"
+	media="screen" />
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.chocolat.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('.gallery-grid a').Chocolat();
+	});
+</script>
+
 </head>
 <body>
 	<div class="wrap-body">
@@ -55,7 +68,7 @@
 				</ul>
 				<ul class=" f-right">
 					<li><p>
-							<a href="../back-end/login.jsp" style="color:white;">登录后台管理</a>
+							<a href="../back-end/index.jsp" style="color:white;">登录后台管理</a>
 						</p></li>
 				</ul>
 			</div>
@@ -101,12 +114,14 @@
 				</div>
 				<div id="main-content">
 					<div class="wrap-content">
-						<div class="row">
+						<div class="row gallery-grid">
 							<c:forEach var="g" items="${sessionScope.gallery_list }">
 								<div class="col-1-4">
 									<div class="zoom-container">
-										<a><span class="zoom-caption"></span><img
-											src="${g.ppath }" alt="${g.ppath }" /></a>
+										<a href="${g.ppath }" class="wow fadeInUp animated"
+											data-wow-delay=".5s"><span class="zoom-caption"></span><img
+											src="${g.ppath }" alt="${g.ppath }"
+											class="img-responsive zoom-img" /></a>
 									</div>
 								</div>
 							</c:forEach>

@@ -32,7 +32,7 @@
 			}
 		}
 
-		if (ck_usr == null && request.getAttribute("usr") == null) {
+		if (ck_usr == null && session.getAttribute("LOGINED_USER") == null) {
 			response.sendRedirect("login.jsp");
 		}
 	%>
@@ -43,8 +43,8 @@
 		</div>
 
 		<div class="dl-log">
-			欢迎您，<span class="dl-log-user">${requestScope.usr.getUname()}</span><a
-				href="back-end/login.jsp" class="dl-log-quit">[退出]</a><a
+			欢迎您，<span class="dl-log-user">${sessionScope.LOGINED_USER.getUname()}</span><a
+				href="back-end/login_quit.jsp" class="dl-log-quit">[退出]</a><a
 				href="IndexServlet" class="dl-log-quit">[返回网站主页]</a>
 		</div>
 	</div>

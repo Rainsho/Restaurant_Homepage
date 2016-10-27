@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import com.restaurant.entity.Order;
+import com.restaurant.entity.OrderSum;
 
 public class OrderDAO extends BaseDAO {
 
@@ -168,6 +169,50 @@ public class OrderDAO extends BaseDAO {
 				Order order = new Order(rs.getInt(1), odate, rs.getInt(3),
 						rs.getFloat(4), rs.getInt(5));
 				return order;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, pst, rs);
+		}
+		return null;
+	}
+
+	public OrderSum getSum(String date_s, String date_t, int ocheck) {
+		if (date_s == null || date_s.equals("")) {
+			date_s = "1900-01-01";
+		}
+		if (date_t == null || date_t.equals("")) {
+			date_t = "9999-12-31";
+		} else {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			String[] s = date_t.split("-");
+			Calendar cal = Calendar.getInstance();
+			cal.set(Integer.parseInt(s[0]), Integer.parseInt(s[1]) - 1,
+					Integer.parseInt(s[2]) + 1);
+			date_t = sdf.format(cal.getTime());
+		}
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			con = getCon();
+			if (ocheck == -1) {
+				String sql = "select count(*), sum(oquant), sum(ofee) from orders where odate between ? and ?";
+				pst = con.prepareStatement(sql);
+				pst.setString(1, date_s);
+				pst.setString(2, date_t);
+				rs = pst.executeQuery();
+			} else {
+				String sql = "select count(*), sum(oquant), sum(ofee) from orders where odate between ? and ? and ocheck = ?";
+				pst = con.prepareStatement(sql);
+				pst.setString(1, date_s);
+				pst.setString(2, date_t);
+				pst.setInt(3, ocheck);
+				rs = pst.executeQuery();
+			}
+			if (rs.next()) {
+				return new OrderSum(rs.getInt(1), rs.getInt(2), rs.getFloat(3));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
