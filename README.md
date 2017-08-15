@@ -1,8 +1,11 @@
 # Restaurant_Homepage
-An Restaurant Homepage with easy back-end management function written with JSP.  
+
+An Restaurant Homepage with easy back-end management function written with JSP.
+
 For personal practice only.
 
-效果测试：~~http://rainsho.cc:8080/Restaurant/~~（服务器暂时关闭）  
+效果测试：http://rest.rainsho.cc
+
 AWS EC2服务器，位于海外。可能速度比较慢，请耐心等待（异步上传过程中可能无明显提示）。  
 需要后台测试账号的请私信联系。
 
